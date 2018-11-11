@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_mp\HeightFieldCache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_mp\KeyNodeFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_mp\MPGeometry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_mp\MPTerrainEngineNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_mp\MPTerrainEngineDriver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_mp\SingleKeyNodeFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_mp\TerrainNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_mp\TileGroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_mp\TileModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_mp\TileModelCompiler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_mp\TileNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_mp\TileNodeRegistry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_mp\TileModelFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_mp\TilePagedLOD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoGenShaders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\src\osgEarthDrivers\engine_mp\MPShaders.cpp.in">
+      <Filter>Template Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\CMakeFiles\5952c728fbbc9916cd61f7501d2418b4\AutoGenShaders.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\Common">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\DynamicLODScaleCallback">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\HeightFieldCache">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\FileLocationCallback">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\KeyNodeFactory">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\MPGeometry">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\MPShaders">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\MPTerrainEngineNode">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\MPTerrainEngineOptions">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\SingleKeyNodeFactory">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\TerrainNode">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\TileGroup">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\TileModel">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\TileModelCompiler">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\TileNode">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\TileNodeRegistry">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\TileModelFactory">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\TilePagedLOD">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\MPEngine.vert.model.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\MPEngine.vert.view.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\MPEngine.frag.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\MPEngine.NormalMap.vert.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_mp\MPEngine.NormalMap.frag.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{86740A42-CF3F-43B9-9406-84B8736FF257}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7DEE5E93-D91A-41D6-8D84-83640ED9C8AA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{29A7D7F3-1EC4-47B7-9E91-DA70BFE5A8C8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader Files">
+      <UniqueIdentifier>{1074CA2C-2839-46AD-B076-942FA3B8172B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Template Files">
+      <UniqueIdentifier>{DEDBCED1-92BD-470E-818E-09E60B0DB936}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

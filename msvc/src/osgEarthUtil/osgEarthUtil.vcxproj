@@ -1,0 +1,1118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vs2015_Debug|Win32">
+      <Configuration>vs2015_Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vs2015_Debug|x64">
+      <Configuration>vs2015_Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vs2015_Release|Win32">
+      <Configuration>vs2015_Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vs2015_Release|x64">
+      <Configuration>vs2015_Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vs2017_Debug|Win32">
+      <Configuration>vs2017_Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vs2017_Debug|x64">
+      <Configuration>vs2017_Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vs2017_Release|Win32">
+      <Configuration>vs2017_Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="vs2017_Release|x64">
+      <Configuration>vs2017_Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{7D87F952-0B06-4A5C-BC83-466024210D0F}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>osgEarthUtil</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|Win32'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|x64'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|Win32'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|x64'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">osgEarthUtild</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">osgEarthUtild</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|Win32'">osgEarthUtild</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">osgEarthUtild</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">osgEarthUtild</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|x64'">osgEarthUtild</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|Win32'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|x64'">$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|Win32'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|x64'">$(ProjectName).dir\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">osgEarthUtil</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">osgEarthUtil</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|Win32'">osgEarthUtil</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">osgEarthUtil</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">osgEarthUtil</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|x64'">osgEarthUtil</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR="Debug";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR=\"Debug\";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;osgEarthd.lib;osgEarthFeaturesd.lib;osgEarthSymbologyd.lib;osgEarthAnnotationd.lib;osgd.lib;osgUtild.lib;osgSimd.lib;osgTerraind.lib;osgDBd.lib;osgFXd.lib;osgManipulatord.lib;osgViewerd.lib;osgTextd.lib;osgGAd.lib;osgShadowd.lib;OpenThreadsd.lib;glu32.lib;opengl32.lib;OpenThreadsd.lib;osgEarthFeaturesd.lib;osgEarthSymbologyd.lib;osgEarthd.lib;ws2_32.lib;winmm.lib;wldap32.lib;psapi.lib;osgShadowd.lib;libcurl_imp.lib;tinyxmlSTL.lib;osgWidgetd.lib;geos.lib;osgd.lib;osgUtild.lib;osgSimd.lib;osgTerraind.lib;osgDBd.lib;osgFXd.lib;osgManipulatord.lib;osgViewerd.lib;osgTextd.lib;osgGAd.lib;gdal_i.lib;OpenThreadsd.lib;glu32.lib;opengl32.lib;OpenThreadsd.lib;glu32.lib;opengl32.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(OSG_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(TINYXML_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\lib\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>$(OutDir)osgEarthUtild.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR="Debug";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR=\"Debug\";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;osgEarthd.lib;osgEarthFeaturesd.lib;osgEarthSymbologyd.lib;osgEarthAnnotationd.lib;osgd.lib;osgUtild.lib;osgSimd.lib;osgTerraind.lib;osgDBd.lib;osgFXd.lib;osgManipulatord.lib;osgViewerd.lib;osgTextd.lib;osgGAd.lib;osgShadowd.lib;OpenThreadsd.lib;glu32.lib;opengl32.lib;OpenThreadsd.lib;osgEarthFeaturesd.lib;osgEarthSymbologyd.lib;osgEarthd.lib;ws2_32.lib;winmm.lib;wldap32.lib;psapi.lib;osgShadowd.lib;libcurl_imp.lib;tinyxmlSTL.lib;osgWidgetd.lib;geos.lib;osgd.lib;osgUtild.lib;osgSimd.lib;osgTerraind.lib;osgDBd.lib;osgFXd.lib;osgManipulatord.lib;osgViewerd.lib;osgTextd.lib;osgGAd.lib;gdal_i.lib;OpenThreadsd.lib;glu32.lib;opengl32.lib;OpenThreadsd.lib;glu32.lib;opengl32.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(OSG_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(TINYXML_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\lib\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>$(OutDir)osgEarthUtild.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR="Debug";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR=\"Debug\";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;osgEarthd.lib;osgEarthFeaturesd.lib;osgEarthSymbologyd.lib;osgEarthAnnotationd.lib;osgd.lib;osgUtild.lib;osgSimd.lib;osgTerraind.lib;osgDBd.lib;osgFXd.lib;osgManipulatord.lib;osgViewerd.lib;osgTextd.lib;osgGAd.lib;osgShadowd.lib;OpenThreadsd.lib;glu32.lib;opengl32.lib;OpenThreadsd.lib;osgEarthFeaturesd.lib;osgEarthSymbologyd.lib;osgEarthd.lib;ws2_32.lib;winmm.lib;wldap32.lib;psapi.lib;osgShadowd.lib;libcurl_imp.lib;tinyxmlSTL.lib;osgWidgetd.lib;geos.lib;osgd.lib;osgUtild.lib;osgSimd.lib;osgTerraind.lib;osgDBd.lib;osgFXd.lib;osgManipulatord.lib;osgViewerd.lib;osgTextd.lib;osgGAd.lib;gdal_i.lib;OpenThreadsd.lib;glu32.lib;opengl32.lib;OpenThreadsd.lib;glu32.lib;opengl32.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(OSG_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(TINYXML_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\lib\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>$(OutDir)osgEarthUtild.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR="Debug";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR=\"Debug\";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;osgEarthd.lib;osgEarthFeaturesd.lib;osgEarthSymbologyd.lib;osgEarthAnnotationd.lib;osgd.lib;osgUtild.lib;osgSimd.lib;osgTerraind.lib;osgDBd.lib;osgFXd.lib;osgManipulatord.lib;osgViewerd.lib;osgTextd.lib;osgGAd.lib;osgShadowd.lib;OpenThreadsd.lib;glu32.lib;opengl32.lib;OpenThreadsd.lib;osgEarthFeaturesd.lib;osgEarthSymbologyd.lib;osgEarthd.lib;ws2_32.lib;winmm.lib;wldap32.lib;psapi.lib;osgShadowd.lib;libcurl_imp.lib;tinyxmlSTL.lib;osgWidgetd.lib;geos.lib;osgd.lib;osgUtild.lib;osgSimd.lib;osgTerraind.lib;osgDBd.lib;osgFXd.lib;osgManipulatord.lib;osgViewerd.lib;osgTextd.lib;osgGAd.lib;gdal_i.lib;OpenThreadsd.lib;glu32.lib;opengl32.lib;OpenThreadsd.lib;glu32.lib;opengl32.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(OSG_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(TINYXML_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\lib\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>$(OutDir)osgEarthUtild.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR="Debug";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR=\"Debug\";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;osgEarthd.lib;osgEarthFeaturesd.lib;osgEarthSymbologyd.lib;osgEarthAnnotationd.lib;osgd.lib;osgUtild.lib;osgSimd.lib;osgTerraind.lib;osgDBd.lib;osgFXd.lib;osgManipulatord.lib;osgViewerd.lib;osgTextd.lib;osgGAd.lib;osgShadowd.lib;OpenThreadsd.lib;glu32.lib;opengl32.lib;OpenThreadsd.lib;osgEarthFeaturesd.lib;osgEarthSymbologyd.lib;osgEarthd.lib;ws2_32.lib;winmm.lib;wldap32.lib;psapi.lib;osgShadowd.lib;libcurl_imp.lib;tinyxmlSTL.lib;osgWidgetd.lib;geos.lib;osgd.lib;osgUtild.lib;osgSimd.lib;osgTerraind.lib;osgDBd.lib;osgFXd.lib;osgManipulatord.lib;osgViewerd.lib;osgTextd.lib;osgGAd.lib;gdal_i.lib;OpenThreadsd.lib;glu32.lib;opengl32.lib;OpenThreadsd.lib;glu32.lib;opengl32.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(OSG_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(TINYXML_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\lib\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>$(OutDir)osgEarthUtild.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR="Debug";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR=\"Debug\";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;osgEarthd.lib;osgEarthFeaturesd.lib;osgEarthSymbologyd.lib;osgEarthAnnotationd.lib;osgd.lib;osgUtild.lib;osgSimd.lib;osgTerraind.lib;osgDBd.lib;osgFXd.lib;osgManipulatord.lib;osgViewerd.lib;osgTextd.lib;osgGAd.lib;osgShadowd.lib;OpenThreadsd.lib;glu32.lib;opengl32.lib;OpenThreadsd.lib;osgEarthFeaturesd.lib;osgEarthSymbologyd.lib;osgEarthd.lib;ws2_32.lib;winmm.lib;wldap32.lib;psapi.lib;osgShadowd.lib;libcurl_imp.lib;tinyxmlSTL.lib;osgWidgetd.lib;geos.lib;osgd.lib;osgUtild.lib;osgSimd.lib;osgTerraind.lib;osgDBd.lib;osgFXd.lib;osgManipulatord.lib;osgViewerd.lib;osgTextd.lib;osgGAd.lib;gdal_i.lib;OpenThreadsd.lib;glu32.lib;opengl32.lib;OpenThreadsd.lib;glu32.lib;opengl32.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(OSG_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(TINYXML_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\lib\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>$(OutDir)osgEarthUtild.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR="Release";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR=\"Release\";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;osgEarth.lib;osgEarthFeatures.lib;osgEarthSymbology.lib;osgEarthAnnotation.lib;osg.lib;osgUtil.lib;osgSim.lib;osgTerrain.lib;osgDB.lib;osgFX.lib;osgManipulator.lib;osgViewer.lib;osgText.lib;osgGA.lib;osgShadow.lib;OpenThreads.lib;glu32.lib;opengl32.lib;ws2_32.lib;winmm.lib;wldap32.lib;psapi.lib;libcurl_imp.lib;tinyxmlSTL.lib;osgWidget.lib;geos.lib;gdal_i.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(OSG_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(TINYXML_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\lib\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ImportLibrary>$(OutDir)osgEarthUtil.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR="Release";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR=\"Release\";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;osgEarth.lib;osgEarthFeatures.lib;osgEarthSymbology.lib;osgEarthAnnotation.lib;osg.lib;osgUtil.lib;osgSim.lib;osgTerrain.lib;osgDB.lib;osgFX.lib;osgManipulator.lib;osgViewer.lib;osgText.lib;osgGA.lib;osgShadow.lib;OpenThreads.lib;glu32.lib;opengl32.lib;ws2_32.lib;winmm.lib;wldap32.lib;psapi.lib;libcurl_imp.lib;tinyxmlSTL.lib;osgWidget.lib;geos.lib;gdal_i.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(OSG_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(TINYXML_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\lib\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ImportLibrary>$(OutDir)osgEarthUtil.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR="Release";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR=\"Release\";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;osgEarth.lib;osgEarthFeatures.lib;osgEarthSymbology.lib;osgEarthAnnotation.lib;osg.lib;osgUtil.lib;osgSim.lib;osgTerrain.lib;osgDB.lib;osgFX.lib;osgManipulator.lib;osgViewer.lib;osgText.lib;osgGA.lib;osgShadow.lib;OpenThreads.lib;glu32.lib;opengl32.lib;ws2_32.lib;winmm.lib;wldap32.lib;psapi.lib;libcurl_imp.lib;tinyxmlSTL.lib;osgWidget.lib;geos.lib;gdal_i.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(OSG_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(TINYXML_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\lib\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ImportLibrary>$(OutDir)osgEarthUtil.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR="Release";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR=\"Release\";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;osgEarth.lib;osgEarthFeatures.lib;osgEarthSymbology.lib;osgEarthAnnotation.lib;osg.lib;osgUtil.lib;osgSim.lib;osgTerrain.lib;osgDB.lib;osgFX.lib;osgManipulator.lib;osgViewer.lib;osgText.lib;osgGA.lib;osgShadow.lib;OpenThreads.lib;glu32.lib;opengl32.lib;ws2_32.lib;winmm.lib;wldap32.lib;psapi.lib;libcurl_imp.lib;tinyxmlSTL.lib;osgWidget.lib;geos.lib;gdal_i.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(OSG_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(TINYXML_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\lib\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ImportLibrary>$(OutDir)osgEarthUtil.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR="Release";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR=\"Release\";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;osgEarth.lib;osgEarthFeatures.lib;osgEarthSymbology.lib;osgEarthAnnotation.lib;osg.lib;osgUtil.lib;osgSim.lib;osgTerrain.lib;osgDB.lib;osgFX.lib;osgManipulator.lib;osgViewer.lib;osgText.lib;osgGA.lib;osgShadow.lib;OpenThreads.lib;glu32.lib;opengl32.lib;ws2_32.lib;winmm.lib;wldap32.lib;psapi.lib;libcurl_imp.lib;tinyxmlSTL.lib;osgWidget.lib;geos.lib;gdal_i.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(OSG_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(TINYXML_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\lib\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ImportLibrary>$(OutDir)osgEarthUtil.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR="Release";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;OSGEARTHUTIL_LIBRARY;CMAKE_INTDIR=\"Release\";osgEarthUtil_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\..\$(OSG_DIR)\include;..\..\..\..\$(OSG_DIR)\msvc\include;..\..\..\;..\..\..\..\$(GDAL_DIR)\frmts;..\..\..\..\$(GDAL_DIR)\alg;..\..\..\..\$(GDAL_DIR)\gcore;..\..\..\..\$(GDAL_DIR)\port;..\..\..\..\$(GDAL_DIR)\ogr;..\..\..\..\$(GDAL_DIR)\ogr\ogrsf_frmts;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;osgEarth.lib;osgEarthFeatures.lib;osgEarthSymbology.lib;osgEarthAnnotation.lib;osg.lib;osgUtil.lib;osgSim.lib;osgTerrain.lib;osgDB.lib;osgFX.lib;osgManipulator.lib;osgViewer.lib;osgText.lib;osgGA.lib;osgShadow.lib;OpenThreads.lib;glu32.lib;opengl32.lib;ws2_32.lib;winmm.lib;wldap32.lib;psapi.lib;libcurl_imp.lib;tinyxmlSTL.lib;osgWidget.lib;geos.lib;gdal_i.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(OSG_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(CURL_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(TINYXML_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GEOS_DIR)\msvc\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\..\..\$(GDAL_DIR)\vc$(PlatformToolsetVersion)\$(Platform)\$(Configuration);..\..\lib\$(Configuration);%(AdditionalLibraryDirectories);</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ImportLibrary>$(OutDir)osgEarthUtil.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\CMakeFiles\f0c2dc30eebade80db0e662c6300ba5c\AutoGenShaders.cpp.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating AutoGenShaders.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">Generating AutoGenShaders.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|Win32'">Generating AutoGenShaders.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating AutoGenShaders.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">Generating AutoGenShaders.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|x64'">Generating AutoGenShaders.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -P .\ConfigureShaders.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">setlocal
+"C:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -P .\ConfigureShaders.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|Win32'">setlocal
+"C:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -P .\ConfigureShaders.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -P .\ConfigureShaders.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">setlocal
+"C:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -P .\ConfigureShaders.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|x64'">setlocal
+"C:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -P .\ConfigureShaders.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\CMakeFiles\f0c2dc30eebade80db0e662c6300ba5c\AutoGenShaders.cpp.rule;..\..\..\src\osgEarthUtil\ContourMap.vert.glsl;..\..\..\src\osgEarthUtil\ContourMap.frag.glsl;..\..\..\src\osgEarthUtil\Fog.vert.glsl;..\..\..\src\osgEarthUtil\Fog.frag.glsl;..\..\..\src\osgEarthUtil\Graticule.vert.glsl;..\..\..\src\osgEarthUtil\Graticule.frag.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.VertOnly.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.frag.glsl;..\..\..\src\osgEarthUtil\Shadowing.vert.glsl;..\..\..\src\osgEarthUtil\Shadowing.frag.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.vert.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.frag.glsl;..\..\..\src\osgEarthUtil\RTTPicker.glsl;..\..\..\src\osgEarthUtil\Shaders.cpp.in;..\..\..\CMakeModules\ConfigureShaders.cmake.in;%(AdditionalInputs);</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">..\..\CMakeFiles\f0c2dc30eebade80db0e662c6300ba5c\AutoGenShaders.cpp.rule;..\..\..\src\osgEarthUtil\ContourMap.vert.glsl;..\..\..\src\osgEarthUtil\ContourMap.frag.glsl;..\..\..\src\osgEarthUtil\Fog.vert.glsl;..\..\..\src\osgEarthUtil\Fog.frag.glsl;..\..\..\src\osgEarthUtil\Graticule.vert.glsl;..\..\..\src\osgEarthUtil\Graticule.frag.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.VertOnly.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.frag.glsl;..\..\..\src\osgEarthUtil\Shadowing.vert.glsl;..\..\..\src\osgEarthUtil\Shadowing.frag.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.vert.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.frag.glsl;..\..\..\src\osgEarthUtil\RTTPicker.glsl;..\..\..\src\osgEarthUtil\Shaders.cpp.in;..\..\..\CMakeModules\ConfigureShaders.cmake.in;%(AdditionalInputs);</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|Win32'">..\..\CMakeFiles\f0c2dc30eebade80db0e662c6300ba5c\AutoGenShaders.cpp.rule;..\..\..\src\osgEarthUtil\ContourMap.vert.glsl;..\..\..\src\osgEarthUtil\ContourMap.frag.glsl;..\..\..\src\osgEarthUtil\Fog.vert.glsl;..\..\..\src\osgEarthUtil\Fog.frag.glsl;..\..\..\src\osgEarthUtil\Graticule.vert.glsl;..\..\..\src\osgEarthUtil\Graticule.frag.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.VertOnly.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.frag.glsl;..\..\..\src\osgEarthUtil\Shadowing.vert.glsl;..\..\..\src\osgEarthUtil\Shadowing.frag.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.vert.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.frag.glsl;..\..\..\src\osgEarthUtil\RTTPicker.glsl;..\..\..\src\osgEarthUtil\Shaders.cpp.in;..\..\..\CMakeModules\ConfigureShaders.cmake.in;%(AdditionalInputs);</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\CMakeFiles\f0c2dc30eebade80db0e662c6300ba5c\AutoGenShaders.cpp.rule;..\..\..\src\osgEarthUtil\ContourMap.vert.glsl;..\..\..\src\osgEarthUtil\ContourMap.frag.glsl;..\..\..\src\osgEarthUtil\Fog.vert.glsl;..\..\..\src\osgEarthUtil\Fog.frag.glsl;..\..\..\src\osgEarthUtil\Graticule.vert.glsl;..\..\..\src\osgEarthUtil\Graticule.frag.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.VertOnly.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.frag.glsl;..\..\..\src\osgEarthUtil\Shadowing.vert.glsl;..\..\..\src\osgEarthUtil\Shadowing.frag.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.vert.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.frag.glsl;..\..\..\src\osgEarthUtil\RTTPicker.glsl;..\..\..\src\osgEarthUtil\Shaders.cpp.in;..\..\..\CMakeModules\ConfigureShaders.cmake.in;%(AdditionalInputs);</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">..\..\CMakeFiles\f0c2dc30eebade80db0e662c6300ba5c\AutoGenShaders.cpp.rule;..\..\..\src\osgEarthUtil\ContourMap.vert.glsl;..\..\..\src\osgEarthUtil\ContourMap.frag.glsl;..\..\..\src\osgEarthUtil\Fog.vert.glsl;..\..\..\src\osgEarthUtil\Fog.frag.glsl;..\..\..\src\osgEarthUtil\Graticule.vert.glsl;..\..\..\src\osgEarthUtil\Graticule.frag.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.VertOnly.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.frag.glsl;..\..\..\src\osgEarthUtil\Shadowing.vert.glsl;..\..\..\src\osgEarthUtil\Shadowing.frag.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.vert.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.frag.glsl;..\..\..\src\osgEarthUtil\RTTPicker.glsl;..\..\..\src\osgEarthUtil\Shaders.cpp.in;..\..\..\CMakeModules\ConfigureShaders.cmake.in;%(AdditionalInputs);</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|x64'">..\..\CMakeFiles\f0c2dc30eebade80db0e662c6300ba5c\AutoGenShaders.cpp.rule;..\..\..\src\osgEarthUtil\ContourMap.vert.glsl;..\..\..\src\osgEarthUtil\ContourMap.frag.glsl;..\..\..\src\osgEarthUtil\Fog.vert.glsl;..\..\..\src\osgEarthUtil\Fog.frag.glsl;..\..\..\src\osgEarthUtil\Graticule.vert.glsl;..\..\..\src\osgEarthUtil\Graticule.frag.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.VertOnly.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.frag.glsl;..\..\..\src\osgEarthUtil\Shadowing.vert.glsl;..\..\..\src\osgEarthUtil\Shadowing.frag.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.vert.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.frag.glsl;..\..\..\src\osgEarthUtil\RTTPicker.glsl;..\..\..\src\osgEarthUtil\Shaders.cpp.in;..\..\..\CMakeModules\ConfigureShaders.cmake.in;%(AdditionalInputs);</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\AutoGenShaders.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">.\AutoGenShaders.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|Win32'">.\AutoGenShaders.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\AutoGenShaders.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">.\AutoGenShaders.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|x64'">.\AutoGenShaders.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='vs2017_Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='vs2015_Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating AutoGenShaders.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">Generating AutoGenShaders.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|Win32'">Generating AutoGenShaders.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating AutoGenShaders.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">Generating AutoGenShaders.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|x64'">Generating AutoGenShaders.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -P .\ConfigureShaders.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">setlocal
+"C:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -P .\ConfigureShaders.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|Win32'">setlocal
+"C:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -P .\ConfigureShaders.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -P .\ConfigureShaders.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">setlocal
+"C:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -P .\ConfigureShaders.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|x64'">setlocal
+"C:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -P .\ConfigureShaders.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\CMakeFiles\f0c2dc30eebade80db0e662c6300ba5c\AutoGenShaders.cpp.rule;..\..\..\src\osgEarthUtil\ContourMap.vert.glsl;..\..\..\src\osgEarthUtil\ContourMap.frag.glsl;..\..\..\src\osgEarthUtil\Fog.vert.glsl;..\..\..\src\osgEarthUtil\Fog.frag.glsl;..\..\..\src\osgEarthUtil\Graticule.vert.glsl;..\..\..\src\osgEarthUtil\Graticule.frag.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.VertOnly.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.frag.glsl;..\..\..\src\osgEarthUtil\Shadowing.vert.glsl;..\..\..\src\osgEarthUtil\Shadowing.frag.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.vert.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.frag.glsl;..\..\..\src\osgEarthUtil\RTTPicker.glsl;..\..\..\src\osgEarthUtil\Shaders.cpp.in;..\..\..\CMakeModules\ConfigureShaders.cmake.in;%(AdditionalInputs);</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">..\..\CMakeFiles\f0c2dc30eebade80db0e662c6300ba5c\AutoGenShaders.cpp.rule;..\..\..\src\osgEarthUtil\ContourMap.vert.glsl;..\..\..\src\osgEarthUtil\ContourMap.frag.glsl;..\..\..\src\osgEarthUtil\Fog.vert.glsl;..\..\..\src\osgEarthUtil\Fog.frag.glsl;..\..\..\src\osgEarthUtil\Graticule.vert.glsl;..\..\..\src\osgEarthUtil\Graticule.frag.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.VertOnly.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.frag.glsl;..\..\..\src\osgEarthUtil\Shadowing.vert.glsl;..\..\..\src\osgEarthUtil\Shadowing.frag.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.vert.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.frag.glsl;..\..\..\src\osgEarthUtil\RTTPicker.glsl;..\..\..\src\osgEarthUtil\Shaders.cpp.in;..\..\..\CMakeModules\ConfigureShaders.cmake.in;%(AdditionalInputs);</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|Win32'">..\..\CMakeFiles\f0c2dc30eebade80db0e662c6300ba5c\AutoGenShaders.cpp.rule;..\..\..\src\osgEarthUtil\ContourMap.vert.glsl;..\..\..\src\osgEarthUtil\ContourMap.frag.glsl;..\..\..\src\osgEarthUtil\Fog.vert.glsl;..\..\..\src\osgEarthUtil\Fog.frag.glsl;..\..\..\src\osgEarthUtil\Graticule.vert.glsl;..\..\..\src\osgEarthUtil\Graticule.frag.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.VertOnly.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.frag.glsl;..\..\..\src\osgEarthUtil\Shadowing.vert.glsl;..\..\..\src\osgEarthUtil\Shadowing.frag.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.vert.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.frag.glsl;..\..\..\src\osgEarthUtil\RTTPicker.glsl;..\..\..\src\osgEarthUtil\Shaders.cpp.in;..\..\..\CMakeModules\ConfigureShaders.cmake.in;%(AdditionalInputs);</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\CMakeFiles\f0c2dc30eebade80db0e662c6300ba5c\AutoGenShaders.cpp.rule;..\..\..\src\osgEarthUtil\ContourMap.vert.glsl;..\..\..\src\osgEarthUtil\ContourMap.frag.glsl;..\..\..\src\osgEarthUtil\Fog.vert.glsl;..\..\..\src\osgEarthUtil\Fog.frag.glsl;..\..\..\src\osgEarthUtil\Graticule.vert.glsl;..\..\..\src\osgEarthUtil\Graticule.frag.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.VertOnly.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.frag.glsl;..\..\..\src\osgEarthUtil\Shadowing.vert.glsl;..\..\..\src\osgEarthUtil\Shadowing.frag.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.vert.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.frag.glsl;..\..\..\src\osgEarthUtil\RTTPicker.glsl;..\..\..\src\osgEarthUtil\Shaders.cpp.in;..\..\..\CMakeModules\ConfigureShaders.cmake.in;%(AdditionalInputs);</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">..\..\CMakeFiles\f0c2dc30eebade80db0e662c6300ba5c\AutoGenShaders.cpp.rule;..\..\..\src\osgEarthUtil\ContourMap.vert.glsl;..\..\..\src\osgEarthUtil\ContourMap.frag.glsl;..\..\..\src\osgEarthUtil\Fog.vert.glsl;..\..\..\src\osgEarthUtil\Fog.frag.glsl;..\..\..\src\osgEarthUtil\Graticule.vert.glsl;..\..\..\src\osgEarthUtil\Graticule.frag.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.VertOnly.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.frag.glsl;..\..\..\src\osgEarthUtil\Shadowing.vert.glsl;..\..\..\src\osgEarthUtil\Shadowing.frag.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.vert.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.frag.glsl;..\..\..\src\osgEarthUtil\RTTPicker.glsl;..\..\..\src\osgEarthUtil\Shaders.cpp.in;..\..\..\CMakeModules\ConfigureShaders.cmake.in;%(AdditionalInputs);</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|x64'">..\..\CMakeFiles\f0c2dc30eebade80db0e662c6300ba5c\AutoGenShaders.cpp.rule;..\..\..\src\osgEarthUtil\ContourMap.vert.glsl;..\..\..\src\osgEarthUtil\ContourMap.frag.glsl;..\..\..\src\osgEarthUtil\Fog.vert.glsl;..\..\..\src\osgEarthUtil\Fog.frag.glsl;..\..\..\src\osgEarthUtil\Graticule.vert.glsl;..\..\..\src\osgEarthUtil\Graticule.frag.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.VertOnly.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.frag.glsl;..\..\..\src\osgEarthUtil\Shadowing.vert.glsl;..\..\..\src\osgEarthUtil\Shadowing.frag.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.vert.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.frag.glsl;..\..\..\src\osgEarthUtil\RTTPicker.glsl;..\..\..\src\osgEarthUtil\Shaders.cpp.in;..\..\..\CMakeModules\ConfigureShaders.cmake.in;%(AdditionalInputs);</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\AutoGenShaders.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">.\AutoGenShaders.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|Win32'">.\AutoGenShaders.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\AutoGenShaders.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">.\AutoGenShaders.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|x64'">.\AutoGenShaders.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='vs2017_Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='vs2015_Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Generating AutoGenShaders.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Generating AutoGenShaders.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -P .\ConfigureShaders.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -P .\ConfigureShaders.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">..\..\CMakeFiles\f0c2dc30eebade80db0e662c6300ba5c\AutoGenShaders.cpp.rule;..\..\..\src\osgEarthUtil\ContourMap.vert.glsl;..\..\..\src\osgEarthUtil\ContourMap.frag.glsl;..\..\..\src\osgEarthUtil\Fog.vert.glsl;..\..\..\src\osgEarthUtil\Fog.frag.glsl;..\..\..\src\osgEarthUtil\Graticule.vert.glsl;..\..\..\src\osgEarthUtil\Graticule.frag.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.VertOnly.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.frag.glsl;..\..\..\src\osgEarthUtil\Shadowing.vert.glsl;..\..\..\src\osgEarthUtil\Shadowing.frag.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.vert.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.frag.glsl;..\..\..\src\osgEarthUtil\RTTPicker.glsl;..\..\..\src\osgEarthUtil\Shaders.cpp.in;..\..\..\CMakeModules\ConfigureShaders.cmake.in;%(AdditionalInputs);</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">..\..\CMakeFiles\f0c2dc30eebade80db0e662c6300ba5c\AutoGenShaders.cpp.rule;..\..\..\src\osgEarthUtil\ContourMap.vert.glsl;..\..\..\src\osgEarthUtil\ContourMap.frag.glsl;..\..\..\src\osgEarthUtil\Fog.vert.glsl;..\..\..\src\osgEarthUtil\Fog.frag.glsl;..\..\..\src\osgEarthUtil\Graticule.vert.glsl;..\..\..\src\osgEarthUtil\Graticule.frag.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.VertOnly.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.frag.glsl;..\..\..\src\osgEarthUtil\Shadowing.vert.glsl;..\..\..\src\osgEarthUtil\Shadowing.frag.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.vert.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.frag.glsl;..\..\..\src\osgEarthUtil\RTTPicker.glsl;..\..\..\src\osgEarthUtil\Shaders.cpp.in;..\..\..\CMakeModules\ConfigureShaders.cmake.in;%(AdditionalInputs);</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.\AutoGenShaders.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.\AutoGenShaders.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating AutoGenShaders.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Generating AutoGenShaders.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -P .\ConfigureShaders.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -P .\ConfigureShaders.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">..\..\CMakeFiles\f0c2dc30eebade80db0e662c6300ba5c\AutoGenShaders.cpp.rule;..\..\..\src\osgEarthUtil\ContourMap.vert.glsl;..\..\..\src\osgEarthUtil\ContourMap.frag.glsl;..\..\..\src\osgEarthUtil\Fog.vert.glsl;..\..\..\src\osgEarthUtil\Fog.frag.glsl;..\..\..\src\osgEarthUtil\Graticule.vert.glsl;..\..\..\src\osgEarthUtil\Graticule.frag.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.VertOnly.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.frag.glsl;..\..\..\src\osgEarthUtil\Shadowing.vert.glsl;..\..\..\src\osgEarthUtil\Shadowing.frag.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.vert.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.frag.glsl;..\..\..\src\osgEarthUtil\RTTPicker.glsl;..\..\..\src\osgEarthUtil\Shaders.cpp.in;..\..\..\CMakeModules\ConfigureShaders.cmake.in;%(AdditionalInputs);</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">..\..\CMakeFiles\f0c2dc30eebade80db0e662c6300ba5c\AutoGenShaders.cpp.rule;..\..\..\src\osgEarthUtil\ContourMap.vert.glsl;..\..\..\src\osgEarthUtil\ContourMap.frag.glsl;..\..\..\src\osgEarthUtil\Fog.vert.glsl;..\..\..\src\osgEarthUtil\Fog.frag.glsl;..\..\..\src\osgEarthUtil\Graticule.vert.glsl;..\..\..\src\osgEarthUtil\Graticule.frag.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.VertOnly.vert.glsl;..\..\..\src\osgEarthUtil\LogDepthBuffer.frag.glsl;..\..\..\src\osgEarthUtil\Shadowing.vert.glsl;..\..\..\src\osgEarthUtil\Shadowing.frag.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.vert.glsl;..\..\..\src\osgEarthUtil\SimpleOceanLayer.frag.glsl;..\..\..\src\osgEarthUtil\RTTPicker.glsl;..\..\..\src\osgEarthUtil\Shaders.cpp.in;..\..\..\CMakeModules\ConfigureShaders.cmake.in;%(AdditionalInputs);</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.\AutoGenShaders.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.\AutoGenShaders.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\osgEarthUtil\Shaders.cpp.in" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\ActivityMonitorTool.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\ArcGIS.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\AtlasBuilder.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\AutoClipPlaneHandler.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\ClampCallback.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\ClipSpace.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\ClusterNode.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\Controls.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\ContourMap.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\DataScanner.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\EarthManipulator.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\Ephemeris.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\ExampleResources.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\FlatteningLayer.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\Fog.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\FractalElevationLayer.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\GARSGraticule.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\GeodeticGraticule.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\GeodeticLabelingEngine.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\GraticuleLabelingEngine.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\HTM.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\LatLongFormatter.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\LinearLineOfSight.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\LogarithmicDepthBuffer.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\LODBlending.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\MeasureTool.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\MGRSFormatter.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\MGRSGraticule.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\MouseCoordsTool.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\MultiElevationLayer.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\Ocean.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\RadialLineOfSight.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\RTTPicker.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\Shadowing.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\SimpleOceanLayer.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\SimplePager.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\SpatialData.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\Sky.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\TerrainProfile.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\TileIndex.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\TileIndexBuilder.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\TFS.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\TFSPackager.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\TMS.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\TMSBackFiller.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\TMSPackager.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\TopologyGraph.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\UTMGraticule.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\UTMLabelingEngine.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\VerticalScale.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\ViewFitter.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\WFS.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\WMS.cpp" />
+    <ClCompile Include="AutoGenShaders.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\BrightnessContrastColorFilter.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\CMYKColorFilter.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\GammaColorFilter.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\GLSLColorFilter.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\HSLColorFilter.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\RGBColorFilter.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\ChromaKeyColorFilter.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\NightColorFilter.cpp" />
+    <None Include="..\..\..\src\osgEarthUtil\ActivityMonitorTool" />
+    <None Include="..\..\..\src\osgEarthUtil\AutoClipPlaneHandler" />
+    <None Include="..\..\..\src\osgEarthUtil\AutoScaleCallback" />
+    <None Include="..\..\..\src\osgEarthUtil\ArcGIS" />
+    <None Include="..\..\..\src\osgEarthUtil\AtlasBuilder" />
+    <None Include="..\..\..\src\osgEarthUtil\ClipSpace" />
+    <None Include="..\..\..\src\osgEarthUtil\Common" />
+    <None Include="..\..\..\src\osgEarthUtil\Controls" />
+    <None Include="..\..\..\src\osgEarthUtil\ContourMap" />
+    <None Include="..\..\..\src\osgEarthUtil\ClampCallback" />
+    <None Include="..\..\..\src\osgEarthUtil\ClusterNode" />
+    <None Include="..\..\..\src\osgEarthUtil\DataScanner" />
+    <None Include="..\..\..\src\osgEarthUtil\EarthManipulator" />
+    <None Include="..\..\..\src\osgEarthUtil\Ephemeris" />
+    <None Include="..\..\..\src\osgEarthUtil\ExampleResources" />
+    <None Include="..\..\..\src\osgEarthUtil\Export" />
+    <None Include="..\..\..\src\osgEarthUtil\FlatteningLayer" />
+    <None Include="..\..\..\src\osgEarthUtil\Fog" />
+    <None Include="..\..\..\src\osgEarthUtil\Formatter" />
+    <None Include="..\..\..\src\osgEarthUtil\FractalElevationLayer" />
+    <None Include="..\..\..\src\osgEarthUtil\GARSGraticule" />
+    <None Include="..\..\..\src\osgEarthUtil\GeodeticGraticule" />
+    <None Include="..\..\..\src\osgEarthUtil\GeodeticLabelingEngine" />
+    <None Include="..\..\..\src\osgEarthUtil\GraticuleLabelingEngine" />
+    <None Include="..\..\..\src\osgEarthUtil\HTM" />
+    <None Include="..\..\..\src\osgEarthUtil\LatLongFormatter" />
+    <None Include="..\..\..\src\osgEarthUtil\LineOfSight" />
+    <None Include="..\..\..\src\osgEarthUtil\LinearLineOfSight" />
+    <None Include="..\..\..\src\osgEarthUtil\LODBlending" />
+    <None Include="..\..\..\src\osgEarthUtil\LogarithmicDepthBuffer" />
+    <None Include="..\..\..\src\osgEarthUtil\MeasureTool" />
+    <None Include="..\..\..\src\osgEarthUtil\MGRSFormatter" />
+    <None Include="..\..\..\src\osgEarthUtil\MGRSGraticule" />
+    <None Include="..\..\..\src\osgEarthUtil\MouseCoordsTool" />
+    <None Include="..\..\..\src\osgEarthUtil\MultiElevationLayer" />
+    <None Include="..\..\..\src\osgEarthUtil\Ocean" />
+    <None Include="..\..\..\src\osgEarthUtil\RadialLineOfSight" />
+    <None Include="..\..\..\src\osgEarthUtil\RTTPicker" />
+    <None Include="..\..\..\src\osgEarthUtil\Shaders" />
+    <None Include="..\..\..\src\osgEarthUtil\Shadowing" />
+    <None Include="..\..\..\src\osgEarthUtil\SimpleOceanLayer" />
+    <None Include="..\..\..\src\osgEarthUtil\SimplePager" />
+    <None Include="..\..\..\src\osgEarthUtil\Sky" />
+    <None Include="..\..\..\src\osgEarthUtil\SpatialData" />
+    <None Include="..\..\..\src\osgEarthUtil\StarData" />
+    <None Include="..\..\..\src\osgEarthUtil\TerrainProfile" />
+    <None Include="..\..\..\src\osgEarthUtil\TileIndex" />
+    <None Include="..\..\..\src\osgEarthUtil\TileIndexBuilder" />
+    <None Include="..\..\..\src\osgEarthUtil\TFS" />
+    <None Include="..\..\..\src\osgEarthUtil\TFSPackager" />
+    <None Include="..\..\..\src\osgEarthUtil\TMS" />
+    <None Include="..\..\..\src\osgEarthUtil\TMSBackFiller" />
+    <None Include="..\..\..\src\osgEarthUtil\TMSPackager" />
+    <None Include="..\..\..\src\osgEarthUtil\TopologyGraph" />
+    <None Include="..\..\..\src\osgEarthUtil\UTMGraticule" />
+    <None Include="..\..\..\src\osgEarthUtil\UTMLabelingEngine" />
+    <None Include="..\..\..\src\osgEarthUtil\VerticalScale" />
+    <None Include="..\..\..\src\osgEarthUtil\ViewFitter" />
+    <None Include="..\..\..\src\osgEarthUtil\WFS" />
+    <None Include="..\..\..\src\osgEarthUtil\WMS" />
+    <None Include="..\..\..\src\osgEarthUtil\BrightnessContrastColorFilter" />
+    <None Include="..\..\..\src\osgEarthUtil\CMYKColorFilter" />
+    <None Include="..\..\..\src\osgEarthUtil\GammaColorFilter" />
+    <None Include="..\..\..\src\osgEarthUtil\GLSLColorFilter" />
+    <None Include="..\..\..\src\osgEarthUtil\HSLColorFilter" />
+    <None Include="..\..\..\src\osgEarthUtil\RGBColorFilter" />
+    <None Include="..\..\..\src\osgEarthUtil\ChromaKeyColorFilter" />
+    <None Include="..\..\..\src\osgEarthUtil\NightColorFilter" />
+    <None Include="..\..\..\src\osgEarthUtil\ContourMap.vert.glsl" />
+    <None Include="..\..\..\src\osgEarthUtil\ContourMap.frag.glsl" />
+    <None Include="..\..\..\src\osgEarthUtil\Fog.vert.glsl" />
+    <None Include="..\..\..\src\osgEarthUtil\Fog.frag.glsl" />
+    <None Include="..\..\..\src\osgEarthUtil\Graticule.vert.glsl" />
+    <None Include="..\..\..\src\osgEarthUtil\Graticule.frag.glsl" />
+    <None Include="..\..\..\src\osgEarthUtil\LogDepthBuffer.vert.glsl" />
+    <None Include="..\..\..\src\osgEarthUtil\LogDepthBuffer.VertOnly.vert.glsl" />
+    <None Include="..\..\..\src\osgEarthUtil\LogDepthBuffer.frag.glsl" />
+    <None Include="..\..\..\src\osgEarthUtil\Shadowing.vert.glsl" />
+    <None Include="..\..\..\src\osgEarthUtil\Shadowing.frag.glsl" />
+    <None Include="..\..\..\src\osgEarthUtil\SimpleOceanLayer.vert.glsl" />
+    <None Include="..\..\..\src\osgEarthUtil\SimpleOceanLayer.frag.glsl" />
+    <None Include="..\..\..\src\osgEarthUtil\RTTPicker.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\osgEarth\osgEarth.vcxproj">
+      <Project>8989B1A1-789C-4DF0-AC3A-D75FDD59F883</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\osgEarthAnnotation\osgEarthAnnotation.vcxproj">
+      <Project>A16E8D04-7FEB-4513-A283-C70FFB545F99</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\osgEarthFeatures\osgEarthFeatures.vcxproj">
+      <Project>3D06BCF4-F288-4B19-B80A-226D5B6797AA</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\osgEarthSymbology\osgEarthSymbology.vcxproj">
+      <Project>957AA7BA-C84A-4344-8D5A-2F2A326D128D</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

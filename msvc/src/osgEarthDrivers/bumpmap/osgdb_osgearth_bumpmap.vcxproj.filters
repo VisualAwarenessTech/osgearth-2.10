@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\bumpmap\BumpMapExtension.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\bumpmap\BumpMapTerrainEffect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoGenShaders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\src\osgEarthDrivers\bumpmap\BumpMapShaders.cpp.in">
+      <Filter>Template Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\CMakeFiles\b9a4578314960d763a3aadd6b963cf09\AutoGenShaders.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\src\osgEarthDrivers\bumpmap\BumpMapExtension">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\bumpmap\BumpMapOptions">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\bumpmap\BumpMapTerrainEffect">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\bumpmap\BumpMapShaders">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\bumpmap\BumpMap.vert.view.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\bumpmap\BumpMap.frag.simple.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\bumpmap\BumpMap.frag.progressive.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="..\..\..\..\src\osgEarthDrivers\bumpmap\BumpMap.frag.common.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{86740A42-CF3F-43B9-9406-84B8736FF257}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7DEE5E93-D91A-41D6-8D84-83640ED9C8AA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{29A7D7F3-1EC4-47B7-9E91-DA70BFE5A8C8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader Files">
+      <UniqueIdentifier>{1074CA2C-2839-46AD-B076-942FA3B8172B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Template Files">
+      <UniqueIdentifier>{DEDBCED1-92BD-470E-818E-09E60B0DB936}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

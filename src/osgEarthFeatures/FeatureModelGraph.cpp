@@ -599,30 +599,66 @@ FeatureModelGraph::setupPaging()
         bs.radius() * _options.layout()->tileSizeFactor().value();
 
     // build the URI for the top-level paged LOD:
-    std::string uri = s_makeURI( 0, 0, 0 );
+	unsigned int size_x = 1;
+	unsigned int size_y = 1;
+	if (_options.layout().isSet() && (_options.layout()->profiletileing() == true))
+	{
+		featureProfile->getProfile()->getNumTiles(0, size_x, size_y);
+	}
 
-    // bulid the top level node:
-    osg::Node* topNode;
+	if ((size_x > 1) || (size_y > 1))
+	{
+		//Create a group node and all required nodes for the top level lod
+		osg::Group *group = new osg::Group();
+		for (unsigned int iy = 0; iy < size_y; ++iy)
+		{
+			for (unsigned int ix = 0; ix < size_x; ++ix)
+			{
 
-    if (options().layout()->paged() == true)
-    {
-        topNode = createPagedNode( 
-            bs, 
-            uri, 
-            0.0f, 
-            maxRange, 
-            _options.layout().get(),
-            _sgCallbacks.get(),
-            _defaultFileLocationCallback.get(),
-            getSession()->getDBOptions(),
-            this);
-    }
-    else
-    {
-        topNode = load(0, 0, 0, uri, getSession()->getDBOptions());
-    }
+				std::string uri = s_makeURI( 0, ix, iy);
+				// bulid the top level Paged LOD:
+				osg::Group* pagedNode = createPagedNode(
+					bs,
+					uri,
+					0.0f,
+					maxRange,
+					_options.layout().get(),
+					_sgCallbacks.get(),
+					_defaultFileLocationCallback.get(),
+					getSession()->getDBOptions(), this);
+				group->addChild(pagedNode);
+			}
+		}
+		return group;
+	}
+	else
+	{
 
-    return topNode;
+		std::string uri = s_makeURI( 0, 0, 0 );
+
+		// bulid the top level node:
+		osg::Node* topNode;
+
+		if (options().layout()->paged() == true)
+		{
+			topNode = createPagedNode( 
+				bs, 
+				uri, 
+				0.0f, 
+				maxRange, 
+				_options.layout().get(),
+				_sgCallbacks.get(),
+				_defaultFileLocationCallback.get(),
+				getSession()->getDBOptions(),
+				this);
+		}
+		else
+		{
+			topNode = load(0, 0, 0, uri, getSession()->getDBOptions());
+		}
+
+		return topNode;
+	}
 }
 
 
@@ -648,8 +684,37 @@ FeatureModelGraph::load(unsigned lod, unsigned tileX, unsigned tileY,
 
         if ( (int)lod >= featureProfile->getFirstLevel() )
         {
-            // The extent of this tile:
-            GeoExtent tileExtent = s_getTileExtent( lod, tileX, tileY, _usableFeatureExtent );
+			// Construct a tile key that will be used to query the source for this tile.
+			int invertedTileY;
+			if (_options.layout().isSet() && (_options.layout()->profiletileing() == true))
+			{
+				invertedTileY = tileY;
+			}
+			else
+			{
+#if 1			
+				// Construct a tile key that will be used to query the source for this tile.
+				// The Tilekey x, y, z that is computed in FeatureModelGraph uses a lower left origin,
+				// osgEarth tilekeys use a lower left so we need to invert it.
+				unsigned int w, h;
+				featureProfile->getProfile()->getNumTiles(lod, w, h);
+				invertedTileY = h - tileY - 1;
+#else
+				invertedTileY = tileY;
+#endif
+			}			
+			GeoExtent tileExtent;
+			TileKey key(lod, tileX, invertedTileY, featureProfile->getProfile());
+			if (_options.layout().isSet() && (_options.layout()->profiletileing() == true))
+			{
+				// The extent of this tile:
+				tileExtent = key.getExtent();
+			}
+			else
+			{
+				// The extent of this tile:
+				tileExtent = s_getTileExtent(lod, tileX, tileY, _usableFeatureExtent);
+			}
 
             // Calculate the bounds of this new tile:
             osg::BoundingSphered tileBound = getBoundInWorldCoords( tileExtent );
@@ -663,15 +728,6 @@ FeatureModelGraph::load(unsigned lod, unsigned tileX, unsigned tileY,
             //OE_NOTICE << "  extent = " << tileExtent.width() << "x" << tileExtent.height() << std::endl;
             //OE_NOTICE << "  tileFactor = " << tileFactor << " maxRange=" << maxRange << " radius=" << tileBound.radius() << std::endl;
             
-
-            // Construct a tile key that will be used to query the source for this tile.            
-            // The tilekey x, y, z that is computed in the FeatureModelGraph uses a lower left origin,
-            // osgEarth tilekeys use a lower left so we need to invert it.
-            unsigned int w, h;
-            featureProfile->getProfile()->getNumTiles(lod, w, h);
-            int invertedTileY = h - tileY - 1;
-
-            TileKey key(lod, tileX, invertedTileY, featureProfile->getProfile());
 
             geometry = buildTile( level, tileExtent, &key, readOptions );
             result = geometry;
@@ -784,29 +840,45 @@ FeatureModelGraph::buildSubTilePagedLODs(unsigned        parentLOD,
     unsigned subtileX = parentTileX * 2;
     unsigned subtileY = parentTileY * 2;
 
-    
+	bool tiles_from_Profile = false;
+	if (_options.layout().isSet() && (_options.layout()->profiletileing() == true))
+		tiles_from_Profile = true;
+
+
     // Find the next level with data:
     const FeatureLevel* flevel = 0L;
-    
-    for(unsigned lod=subtileLOD; lod<_lodmap.size() && !flevel; ++lod)
-    {
-        flevel = _lodmap[lod];
-    }
 
-    // should not happen (or this method would never have been called in teh first place) but
-    // check anyway.
-    if ( !flevel )
-    {
-        OE_INFO << LC << "INTERNAL: buildSubTilePagedLODs called but no further levels exist\n";
-        return;
-    }
-    
+	if (!tiles_from_Profile)
+	{
+		for (unsigned lod = subtileLOD; lod < _lodmap.size() && !flevel; ++lod)
+		{
+			flevel = _lodmap[lod];
+		}
+
+		// should not happen (or this method would never have been called in teh first place) but
+		// check anyway.
+		if (!flevel)
+		{
+			OE_INFO << LC << "INTERNAL: buildSubTilePagedLODs called but no further levels exist\n";
+			return;
+		}
+	}
+
     // make a paged LOD for each subtile:
     for( unsigned u = subtileX; u <= subtileX + 1; ++u )
     {
         for( unsigned v = subtileY; v <= subtileY + 1; ++v )
         {
-            GeoExtent subtileFeatureExtent = s_getTileExtent( subtileLOD, u, v, _usableFeatureExtent );
+			GeoExtent subtileFeatureExtent;
+			if (tiles_from_Profile)
+			{
+				TileKey key(subtileLOD, u, v, _session->getFeatureSource()->getFeatureProfile()->getProfile());
+				subtileFeatureExtent = key.getExtent();
+			}
+			else
+			{
+				subtileFeatureExtent = s_getTileExtent(subtileLOD, u, v, _usableFeatureExtent);
+			}
             osg::BoundingSphered subtile_bs = getBoundInWorldCoords( subtileFeatureExtent );
       
             // Calculate the maximum camera range for the LOD.
@@ -1505,6 +1577,34 @@ FeatureModelGraph::createStyleGroup(const Style&          style,
     return styleGroup;
 }
 
+osg::Group*
+FeatureModelGraph::createStyleGroup(const Style&  style, osg::ref_ptr<FeatureCursor>&cursor, FeatureIndexBuilder* index, const GeoExtent &extent, FeatureProfile *featureProfile, 
+								   const osgDB::Options* readOptions)
+{
+	osg::Group* styleGroup = 0L;
+
+	// the profile of the features
+
+
+	if (cursor.valid() && cursor->hasMore())
+	{
+
+		FilterContext context(_session.get(), featureProfile, extent, index);
+
+		// start by culling our feature list to the working extent. By default, this is done by
+		// checking feature centroids. But the user can override this to crop feature geometry to
+		// the cell boundaries.
+		FeatureList workingSet;
+		cursor->fill(workingSet);
+
+		styleGroup = createStyleGroup(style, workingSet, context, readOptions);
+	}
+
+
+	return styleGroup;
+}
+
+
 void
 FeatureModelGraph::applyRenderSymbology(const Style& style, osg::Node* node)
 {
@@ -1699,3 +1799,46 @@ FeatureModelGraph::setStyles( StyleSheet* styles )
     _session->setStyles( styles );
     dirty();
 }
+
+
+bool FeatureModelGraph::buildWorkingSet(osg::ref_ptr<osg::Group> &group, osg::ref_ptr<FeatureCursor>&WorkingSet, const GeoExtent& extent, FeatureProfile *Profile, const osgDB::Options* readOptions)
+{
+	// set up for feature indexing if appropriate:
+	
+	FeatureSourceIndexNode* index = 0L;
+
+	FeatureSource* featureSource = _session->getFeatureSource();
+
+	if (featureSource)
+	{
+		const FeatureProfile* fp = featureSource->getFeatureProfile();
+
+		if (_featureIndex.valid())
+		{
+			index = new FeatureSourceIndexNode(_featureIndex.get());
+			group = index;
+		}
+	}
+
+	if (!group.valid())
+	{
+		group = new osg::Group();
+	}
+
+	Style defaultStyle;
+
+	if (_session->styles()->selectors().size() == 0)
+	{
+		// attempt to glean the style from the feature source name:
+		defaultStyle = *_session->styles()->getStyle(
+			*_session->getFeatureSource()->getFeatureSourceOptions().name());
+	}
+
+	osg::Group* styleGroup = createStyleGroup(defaultStyle, WorkingSet, index, extent, Profile, readOptions);
+
+	if (styleGroup && !group->containsNode(styleGroup))
+		group->addChild(styleGroup);
+
+	return group->getNumChildren() > 0;
+}
+

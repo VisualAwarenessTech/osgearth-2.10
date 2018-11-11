@@ -27,6 +27,7 @@
 #include <osgEarth/ECEF>
 #include <osgEarth/VirtualProgram>
 #include <osgEarth/DrawInstanced>
+#include <osgEarth/Registry>
 #include <osgEarth/Capabilities>
 #include <osgEarth/ScreenSpaceLayout>
 #include <osgEarth/CullingUtils>
@@ -37,7 +38,22 @@
 #include <osg/Geode>
 #include <osg/MatrixTransform>
 #include <osg/NodeVisitor>
+#include <osg/ShapeDrawable>
+#include <osg/AlphaFunc>
 #include <osg/Billboard>
+
+#include <osgSim/LightPointNode>
+
+#include <osgDB/FileNameUtils>
+#include <osgDB/Registry>
+#include <osgDB/WriteFile>
+#include <osgDB/Archive>
+
+#include <osgUtil/Optimizer>
+#include <osgUtil/MeshOptimizers>
+
+#include <list>
+#include <deque>
 
 #define LC "[SubstituteModelFilter] "
 
@@ -66,6 +82,46 @@ namespace
     };
 }
 
+
+class MultipleTextureVisitor : public osg::NodeVisitor {
+public:
+	MultipleTextureVisitor()
+		: osg::NodeVisitor(TRAVERSE_ALL_CHILDREN)
+	{
+	}
+
+	virtual void apply(osg::Geode& geode)
+	{
+		apply(geode.getStateSet());
+		for (unsigned int i = 0; i < geode.getNumDrawables(); ++i)
+		{
+			osg::Drawable* drawable = geode.getDrawable(i);
+			apply(drawable->getStateSet());
+		}
+		osg::NodeVisitor::apply(geode);
+	}
+
+	void apply(osg::StateSet* ss)
+	{
+
+		if (ss)
+		{
+#ifdef _DEBUG
+			int numTexModes = ss->getNumTextureModeLists();
+#endif
+			for (unsigned int i = 1; i<ss->getNumTextureModeLists(); i++)
+			{
+				const osg::Texture* texture = dynamic_cast<osg::Texture*>(ss->getTextureAttribute(i, osg::StateAttribute::TEXTURE));
+				if (texture)
+				{
+					ss->setTextureMode(i, GL_TEXTURE_2D, osg::StateAttribute::OFF | osg::StateAttribute::OVERRIDE);
+				}
+			}
+		}
+	}
+};
+
+
 //------------------------------------------------------------------------
 
 SubstituteModelFilter::SubstituteModelFilter( const Style& style ) :
@@ -74,7 +130,8 @@ _cluster              ( false ),
 _useDrawInstanced     ( true ),
 _merge                ( true ),
 _normalScalingRequired( false ),
-_instanceCache        ( false )     // cache per object so MT not required
+_instanceCache        ( false ),    // cache per object so MT not required
+_GlobalModelMgr	      (GlobalModelManager::getInstance())
 {
     //NOP
 }
@@ -141,7 +198,10 @@ SubstituteModelFilter::process(const FeatureList&           features,
     // keep track of failed URIs so we don't waste time or warning messages on them
     std::set< URI > missing;
 
-    StringExpression  uriEx    = *symbol->url();
+	//CDB Model Replacement Data
+	ModelReplacmentdataPV	ReplaceModels;
+
+	StringExpression  uriEx    = *symbol->url();
     NumericExpression scaleEx  = *symbol->scale();
 
     const ModelSymbol* modelSymbol = dynamic_cast<const ModelSymbol*>(symbol);
@@ -159,20 +219,108 @@ SubstituteModelFilter::process(const FeatureList&           features,
         scaleYEx  = *modelSymbol->scaleY();
         scaleZEx  = *modelSymbol->scaleZ();
     }
+	osg::ref_ptr<osgDB::Archive> ar = NULL;
+
+	bool Do_Editing_Support = false;
+
+	MultipleTextureVisitor v;
 
     for( FeatureList::const_iterator f = features.begin(); f != features.end(); ++f )
     {
         Feature* input = f->get();
-
+		std::string archiveName;
         // Run a feature pre-processing script.
         if ( symbol->script().isSet() )
         {
             StringExpression scriptExpr(symbol->script().get());
             input->eval( scriptExpr, &context );
         }
+		if ((ar == NULL) && input->hasAttr("osge_modelzip"))  
+		{
+			//all model requests should come from the same archive
+			//the existance and validity of the archive has already been tested by the driver
+			archiveName = input->getString("osge_modelzip");
+			ar = osgDB::openArchive(archiveName, osgDB::ReaderWriter::ArchiveStatus::READ);
 
+		}
+
+		bool feature_defined_model = input->hasAttr("osge_modelname");
+		bool skip_multitexdisable = input->hasAttr("osge_nomultidisable");
+		bool replace = false;
+
+#ifdef _DEBUG
+		int fubar = 0;
+#endif
+		std::string st;
+		std::string modeltextPath;
+		std::string referenceName;
+		osg::ref_ptr<osgDB::Options> localoptions = NULL;
 		// evaluate the instance URI expression:
-		const std::string& st = input->eval(uriEx, &context);
+		bool feature_defined_preInstanced = false;
+		if (feature_defined_model)
+		{
+			st = input->getString("osge_modelname");
+			replace = input->hasAttr("osge_referencedName");
+			if (replace)
+				referenceName = input->getString("osge_referencedName");
+#ifdef _DEBUG
+			if (replace)
+			{
+				++fubar;
+			}
+#endif
+			if (input->hasAttr("osge_texturezip"))
+			{
+				localoptions = context.getSession()->getDBOptions()->cloneOptions();
+				modeltextPath = input->getString("osge_texturezip");
+				localoptions->setDatabasePath(modeltextPath);
+				std::string options_string = localoptions->getOptionString();
+				if (options_string.empty())
+					options_string = "TextureInArchive";
+				else
+					options_string.append(";TextureInArchive");
+				localoptions->setOptionString(options_string);
+				if (input->hasAttr("osge_gs_uses_gt"))
+				{
+					std::string archiveRefPath = input->getString("osge_gs_uses_gt");
+					osgDB::FilePathList& datapathlist = localoptions->getDatabasePathList();
+					datapathlist.push_back(archiveRefPath);
+				}
+			}
+			else if (input->hasAttr("osge_modeltexture"))
+			{
+				localoptions = context.getSession()->getDBOptions()->cloneOptions();
+				modeltextPath = input->getString("osge_modeltexture");
+				localoptions->setDatabasePath(modeltextPath);
+				osgDB::FilePathList& datapathlist = localoptions->getDatabasePathList();
+				datapathlist.push_back(st);
+				std::string options_string = localoptions->getOptionString();
+				if (options_string.empty())
+					options_string = "Remap2Directory";
+				else
+					options_string.append(";Remap2Directory");
+				localoptions->setOptionString(options_string);
+				//add below up here??
+				if (input->hasAttr("osge_gs_uses_gt"))
+				{
+					std::string archiveRefPath = input->getString("osge_gs_uses_gt");
+					datapathlist.push_back(archiveRefPath);					
+				}
+			}
+			else if (input->hasAttr("osge_gs_uses_gt"))
+			{
+				localoptions = context.getSession()->getDBOptions()->cloneOptions();
+				std::string archiveRefPath = input->getString("osge_gs_uses_gt");
+				localoptions->setDatabasePath(archiveRefPath);
+			}
+			else
+				feature_defined_preInstanced = true;
+		}
+		else
+		{
+			st = input->eval(uriEx, &context);
+		}
+
 		URI& instanceURI = uriCache[st];
 		if(instanceURI.empty()) // Create a map, to reuse URI's, since they take a long time to create
 		{
@@ -188,39 +336,71 @@ SubstituteModelFilter::process(const FeatureList&           features,
         float scale = 1.0f;
         osg::Vec3d scaleVec(1.0, 1.0, 1.0);
         osg::Matrixd scaleMatrix;
-        if ( symbol->scale().isSet() )
-        {
-            scale = input->eval( scaleEx, &context );
-            scaleVec.set(scale, scale, scale);
-        }
-        if ( modelSymbol )
-        {
-            if ( modelSymbol->scaleX().isSet() )
-            {
-                scaleVec.x() *= input->eval( scaleXEx, &context );
-            }
-            if ( modelSymbol->scaleY().isSet() )
-            {
-                scaleVec.y() *= input->eval( scaleYEx, &context );
-            }
-            if ( modelSymbol->scaleZ().isSet() )
-            {
-                scaleVec.z() *= input->eval( scaleZEx, &context );
-            }
-        }
+		if (feature_defined_model)
+		{
+			//add check for attribute scale
+			float scaleX = 1.0; 
+			float scaleY = 1.0;
+			float scaleZ = 1.0;
+			if (input->hasAttr("scalx"))
+				scaleX = (float)input->getDouble("scalx");
+			if (input->hasAttr("scaly"))
+				scaleY = (float)input->getDouble("scaly");
+			if (input->hasAttr("scalz"))
+				scaleZ = (float)input->getDouble("scalz");
+			if ((scaleX != 1.0) || (scaleY != 1.0) || (scaleZ != 1.0))
+				_normalScalingRequired = true;
+			scaleMatrix = osg::Matrix::scale(scaleX, scaleY, scaleZ);
+			}
+		else 
+		{
+ 
+        	if ( symbol->scale().isSet() )
+        	{
+           	 	scale = input->eval( scaleEx, &context );
+            	scaleVec.set(scale, scale, scale);
+        	}
+        	if ( modelSymbol )
+        	{
+            	if ( modelSymbol->scaleX().isSet() )
+            	{
+                	scaleVec.x() *= input->eval( scaleXEx, &context );
+            	}
+            	if ( modelSymbol->scaleY().isSet() )
+            	{
+                	scaleVec.y() *= input->eval( scaleYEx, &context );
+            	}
+            	if ( modelSymbol->scaleZ().isSet() )
+            	{
+                	scaleVec.z() *= input->eval( scaleZEx, &context );
+            	}
+        	}
 
-        if ( scaleVec.x() == 0.0 ) scaleVec.x() = 1.0;
-        if ( scaleVec.y() == 0.0 ) scaleVec.y() = 1.0;
-        if ( scaleVec.z() == 0.0 ) scaleVec.z() = 1.0;
+       	 	if ( scaleVec.x() == 0.0 ) scaleVec.x() = 1.0;
+        	if ( scaleVec.y() == 0.0 ) scaleVec.y() = 1.0;
+        	if ( scaleVec.z() == 0.0 ) scaleVec.z() = 1.0;
 
-        scaleMatrix = osg::Matrix::scale( scaleVec );
-        
+        	scaleMatrix = osg::Matrix::scale( scaleVec );
+		}
+
         osg::Matrixd rotationMatrix;
-        if ( modelSymbol && modelSymbol->heading().isSet() )
-        {
-            float heading = input->eval(headingEx, &context);
-            rotationMatrix.makeRotate( osg::Quat(osg::DegreesToRadians(heading), osg::Vec3(0,0,1)) );
-        }
+		if (feature_defined_model)
+		{
+			if (input->hasAttr("ao1"))
+			{
+				float heading = (float)input->getDouble("ao1") * -1.0;
+				if (heading != 0.0)
+					rotationMatrix.makeRotate(osg::Quat(osg::DegreesToRadians(heading), osg::Vec3(0, 0, 1)));
+			}
+		}
+		else
+		{
+			if (modelSymbol && modelSymbol->heading().isSet())
+			{
+				float heading = input->eval(headingEx, &context);
+				rotationMatrix.makeRotate(osg::Quat(osg::DegreesToRadians(heading), osg::Vec3(0, 0, 1)));
+			}
+		}
 
 		// how that we have a marker source, create a node for it
 		std::pair<URI,float> key( instanceURI, iconSymbol? scale : 1.0f ); //use 1.0 for models, since we don't want unique models based on scaling
@@ -231,8 +411,16 @@ SubstituteModelFilter::process(const FeatureList&           features,
         {
             // Always clone the cached instance so we're not processing data that's
             // already in the scene graph. -gw
-            context.resourceCache()->cloneOrCreateInstanceNode(instance.get(), model, context.getDBOptions());
-
+			if (feature_defined_model)
+				context.resourceCache()->cloneOrCreateInstanceNode(instance.get(), model, localoptions, ar);
+			else
+            	context.resourceCache()->cloneOrCreateInstanceNode(instance.get(), model, context.getDBOptions());	
+			if (model)
+			{
+				model->getOrCreateStateSet()->setMode(GL_DEPTH_TEST, osg::StateAttribute::ON | osg::StateAttribute::OVERRIDE);
+				if(!skip_multitexdisable)
+					model->accept(v);
+			}
             // if icon decluttering is off, install an AutoTransform.
             if ( iconSymbol )
             {
@@ -249,7 +437,18 @@ SubstituteModelFilter::process(const FeatureList&           features,
                     model = at;
                 }
             }
+			if (model.valid() && feature_defined_model)
+				model->setName(st.c_str());
         }
+
+		if (replace && model.valid())
+		{
+			std::string newXformName = "";
+			if (input->hasAttr("transformname"))
+				newXformName = input->getString("transformname");
+			ModelReplacementdataP ReplaceEntry = new ModelReplacementData(st, referenceName, newXformName, model);
+			ReplaceModels.push_back(ReplaceEntry);
+		}
 
         if ( model.valid() )
         {
@@ -271,33 +470,35 @@ SubstituteModelFilter::process(const FeatureList&           features,
                     // need to recalcluate expression-based data per-point, not just per-feature!
                     float scale = 1.0f;
                     osg::Vec3d scaleVec(1.0, 1.0, 1.0);
-                    osg::Matrixd scaleMatrix;
-                    if ( symbol->scale().isSet() )
-                    {
-                        scale = input->eval( scaleEx, &context );
-                        scaleVec.set(scale, scale, scale);
-                    }
-                    if ( modelSymbol )
-                    {
-                        if ( modelSymbol->scaleX().isSet() )
-                        {
-                            scaleVec.x() *= input->eval( scaleXEx, &context );
-                        }
-                        if ( modelSymbol->scaleY().isSet() )
-                        {
-                            scaleVec.y() *= input->eval( scaleYEx, &context );
-                        }
-                        if ( modelSymbol->scaleZ().isSet() )
-                        {
-                            scaleVec.z() *= input->eval( scaleZEx, &context );
-                        }
-                    }
+					if (!feature_defined_model)
+					{
+						if (symbol->scale().isSet())
+						{
+							scale = input->eval(scaleEx, &context);
+							scaleVec.set(scale, scale, scale);
+						}
+						if (modelSymbol)
+						{
+							if (modelSymbol->scaleX().isSet())
+							{
+								scaleVec.x() *= input->eval(scaleXEx, &context);
+							}
+							if (modelSymbol->scaleY().isSet())
+							{
+								scaleVec.y() *= input->eval(scaleYEx, &context);
+							}
+							if (modelSymbol->scaleZ().isSet())
+							{
+								scaleVec.z() *= input->eval(scaleZEx, &context);
+							}
+						}
 
-                    if ( scaleVec.x() == 0.0 ) scaleVec.x() = 1.0;
-                    if ( scaleVec.y() == 0.0 ) scaleVec.y() = 1.0;
-                    if ( scaleVec.z() == 0.0 ) scaleVec.z() = 1.0;
+						if (scaleVec.x() == 0.0) scaleVec.x() = 1.0;
+						if (scaleVec.y() == 0.0) scaleVec.y() = 1.0;
+						if (scaleVec.z() == 0.0) scaleVec.z() = 1.0;
 
-                    scaleMatrix = osg::Matrix::scale( scaleVec );
+						scaleMatrix = osg::Matrix::scale(scaleVec);
+					}
 
                     if ( modelSymbol && modelSymbol->heading().isSet() )
                     {
@@ -313,11 +514,11 @@ SubstituteModelFilter::process(const FeatureList&           features,
                         // but if the tile is big enough the up vectors won't be quite right.
                         osg::Matrixd rotation;
                         ECEF::transformAndGetRotationMatrix( point, context.profile()->getSRS(), point, targetSRS, rotation );
-                        mat = scaleMatrix * rotationMatrix * rotation * osg::Matrixd::translate( point ) * _world2local;
+                        mat = rotationMatrix * scaleMatrix * rotation * osg::Matrixd::translate( point ) * _world2local;
                     }
                     else
                     {
-                        mat = scaleMatrix * rotationMatrix * osg::Matrixd::translate( point ) * _world2local;
+                        mat = rotationMatrix * scaleMatrix *  osg::Matrixd::translate( point ) * _world2local;
                     }
 
                     osg::MatrixTransform* xform = new osg::MatrixTransform();
@@ -333,7 +534,16 @@ SubstituteModelFilter::process(const FeatureList&           features,
                     }
 
                     // name the feature if necessary
-                    if ( !_featureNameExpr.empty() )
+					if (feature_defined_model)
+					{
+						if (input->hasAttr("transformname"))
+						{
+							Do_Editing_Support = true;
+							std::string transname = input->getString("transformname");
+							xform->setName(transname);
+						}
+					}
+					else if ( !_featureNameExpr.empty() )
                     {
                         const std::string& name = input->eval( _featureNameExpr, &context);
                         if ( !name.empty() )
@@ -343,6 +553,25 @@ SubstituteModelFilter::process(const FeatureList&           features,
             }
         }
     }
+
+
+	if (ar)
+	{
+		ar.release();
+		ar = NULL;
+	}
+
+
+	if (Do_Editing_Support)
+	{
+		osg::Group * Orphaned = new osg::Group();
+		Orphaned->setName("orphaneddmat");
+		osg::MatrixTransform* world2local = new osg::MatrixTransform();
+		world2local->setName("world2local");
+		world2local->setMatrix(_world2local);
+		Orphaned->addChild(world2local);
+		attachPoint->addChild(Orphaned);
+	}
 
     if ( iconSymbol )
     {
@@ -371,6 +600,9 @@ SubstituteModelFilter::process(const FeatureList&           features,
         // install a shader program to render draw-instanced.
         DrawInstanced::install( attachPoint->getOrCreateStateSet() );
     }
+
+	if (ReplaceModels.size() > 0)
+		_GlobalModelMgr->Add_To_Replacment_Stack(ReplaceModels);
 
     return true;
 }

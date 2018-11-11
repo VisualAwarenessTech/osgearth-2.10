@@ -121,6 +121,10 @@ namespace osgEarth { namespace Features
 
         //! Options passed in.
         const FeatureModelSourceOptions& options() const { return _options; }
+	/**
+	 * Build a predefined set of features
+	 */
+		bool buildWorkingSet(osg::ref_ptr<osg::Group> &group, osg::ref_ptr<FeatureCursor>&WorkingSet, const GeoExtent& extent, FeatureProfile *Profile, const osgDB::Options* readOptions);
 
     public: // osg::Node
 
@@ -163,6 +167,14 @@ namespace osgEarth { namespace Features
             FeatureList&          workingSet, 
             const FilterContext&  contextPrototype,
             const osgDB::Options* readOptions);
+	    
+		osg::Group*  createStyleGroup(
+			const Style&  style,
+			osg::ref_ptr<FeatureCursor>&cursor,
+			FeatureIndexBuilder* index,
+			const GeoExtent &extent,
+			FeatureProfile *featureProfile,
+			const osgDB::Options* readOptions);
 
         void buildStyleGroups(
             const StyleSelector*  selector,

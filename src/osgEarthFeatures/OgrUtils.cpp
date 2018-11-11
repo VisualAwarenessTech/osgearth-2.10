@@ -103,69 +103,43 @@ OgrUtils::createGeometry( OGRGeometryH geomHandle )
 {
     Symbology::Geometry* output = 0L;
 
-    OGRwkbGeometryType wkbType = OGR_G_GetGeometryType( geomHandle );        
+    OGRwkbGeometryType wkbType = wkbFlatten(OGR_G_GetGeometryType( geomHandle ));        
 
-    int numPoints, numGeoms;
-
-    switch (wkbType)
+    if (
+        wkbType == wkbPolygon )
     {
-    case wkbPolygon:
-    case wkbPolygon25D:
-#ifdef GDAL_HAS_M_TYPES
-    case wkbPolygonM:
-    case wkbPolygonZM:
-#endif
-        output = createPolygon(geomHandle);
-        break;
-
-    case wkbLineString:
-    case wkbLineString25D:
-#ifdef GDAL_HAS_M_TYPES
-    case wkbLineStringM:
-    case wkbLineStringZM:
-#endif
-        numPoints = OGR_G_GetPointCount( geomHandle );
+        output = createPolygon( geomHandle );
+    }
+    else if (
+        wkbType == wkbLineString  )
+    {
+        int numPoints = OGR_G_GetPointCount( geomHandle );
         output = new Symbology::LineString( numPoints );
         populate( geomHandle, output, numPoints );
-        break;
-
-    case wkbLinearRing:
-        numPoints = OGR_G_GetPointCount( geomHandle );
+    }
+    else if (
+        wkbType == wkbLinearRing )
+    {
+        int numPoints = OGR_G_GetPointCount( geomHandle );
         output = new Symbology::Ring( numPoints );
         populate( geomHandle, output, numPoints );
-        break;
-
-    case wkbPoint:
-    case wkbPoint25D:
-#ifdef GDAL_HAS_M_TYPES
-    case wkbPointM:
-    case wkbPointZM:
-#endif
-        numPoints = OGR_G_GetPointCount( geomHandle );
+    }
+    else if ( 
+        wkbType == wkbPoint )
+    {
+        int numPoints = OGR_G_GetPointCount( geomHandle );
         output = new Symbology::PointSet( numPoints );
         populate( geomHandle, output, numPoints );
-        break;
-
-    case wkbGeometryCollection:
-    case wkbGeometryCollection25D:
-    case wkbMultiPoint:
-    case wkbMultiPoint25D:
-    case wkbMultiLineString:
-    case wkbMultiLineString25D:
-    case wkbMultiPolygon:
-    case wkbMultiPolygon25D:
-#ifdef GDAL_HAS_M_TYPES
-    case wkbGeometryCollectionM:
-    case wkbGeometryCollectionZM:
-    case wkbMultiPointM:
-    case wkbMultiPointZM:
-    case wkbMultiLineStringM:
-    case wkbMultiLineStringZM:
-    case wkbMultiPolygonM:
-    case wkbMultiPolygonZM:
-#endif
+    }
+    else if (
+        wkbType == wkbGeometryCollection ||
+        wkbType == wkbMultiPoint ||
+        wkbType == wkbMultiLineString ||
+        wkbType == wkbMultiPolygon )
+    {
         Symbology::MultiGeometry* multi = new Symbology::MultiGeometry();
-        numGeoms = OGR_G_GetGeometryCount( geomHandle );
+
+        int numGeoms = OGR_G_GetGeometryCount( geomHandle );
         for( int n=0; n<numGeoms; n++ )
         {
             OGRGeometryH subGeomRef = OGR_G_GetGeometryRef( geomHandle, n );
@@ -175,8 +149,8 @@ OgrUtils::createGeometry( OGRGeometryH geomHandle )
                 if ( geom ) multi->getComponents().push_back( geom );
             }
         } 
+
         output = multi;
-        break;
     }
 
     return output;
