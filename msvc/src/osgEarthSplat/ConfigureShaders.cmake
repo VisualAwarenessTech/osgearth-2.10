@@ -1,10 +1,10 @@
 # configureshaders.cmake.in
 
-set(source_dir      "K:/Development/op3d_active/osgearth-2.10/src/osgEarthSplat")
-set(bin_dir         "K:/Development/op3d_active/osgearth-2.10/msvc/src/osgEarthSplat")
+set(source_dir      "../../../src/osgEarthSplat")
+set(bin_dir         "./")
 set(glsl_files      "Splat.types.glsl;Splat.Noise.glsl;Splat.vert.model.glsl;Splat.vert.view.glsl;Splat.frag.glsl;Splat.util.glsl;GroundCover.TCS.glsl;GroundCover.TES.glsl;GroundCover.GS.glsl;GroundCover.FS.glsl")
 set(template_file   "SplatShaders.cpp.in")
-set(output_cpp_file "K:/Development/op3d_active/osgearth-2.10/msvc/src/osgEarthSplat/AutoGenShaders.cpp")
+set(output_cpp_file "./AutoGenShaders.cpp")
 
 # modify the contents for inlining; replace input with output (var: file)
 # i.e., the file name (in the form ) gets replaced with the

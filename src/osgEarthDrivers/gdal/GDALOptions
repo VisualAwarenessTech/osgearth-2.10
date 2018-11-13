@@ -59,8 +59,27 @@ namespace osgEarth { namespace Drivers
 
         optional<URI>& url() { return _url; }
         const optional<URI>& url() const { return _url; }
+		/*
+		 * If the source is a geopackage file a table name to open may also be required
+         */
+		optional<std::string>& table() { return _table; }
+		const optional<std::string>& table() const { return _table; }
 
-        /*
+		/*
+		* CDB BaseMap Tiles (GeoPackage tiles) may be used for imagery or Elevation
+		* If this option is used both the root directory and the bounding limts must 
+		* be provided
+		*/
+		optional<std::string>& rootDir() { return _CDB_rootDir; }
+		const optional<std::string>& rootDir() const { return _CDB_rootDir; }
+
+		/*
+		* CDB Limits must be provided if BaseMap Geopackage files are used by the gdal driver
+		*/
+		optional<std::string>& Limits() { return _CDB_Limits; }
+		const optional<std::string>& Limits() const { return _CDB_Limits; }
+
+		/*
          * If the data source is a database (e.g., PostGIS), the connection
          * string to use to open the database table.
          */
@@ -100,6 +119,13 @@ namespace osgEarth { namespace Drivers
          */
         optional<unsigned int>& subDataSet() { return _subDataSet;}
         const optional<unsigned int>& subDataSet() const { return _subDataSet;}
+		/**
+		 * Set to true to deal with 4 band imagery that contains red green blue and near Ir bands
+		 * If color interpolation is not set in the image header. This will prevent band 4 from being 
+		 * treated as an alpha band in these cases
+		 */
+		 optional<bool>& nearIR() { return _nearIR; }
+		 const optional<bool>& nearIR() const { return _nearIR; }
 
         /**
          The "warp profile" is a way to tell the GDAL driver to keep the original SRS and geotransform of the source data
@@ -122,7 +148,8 @@ namespace osgEarth { namespace Drivers
 
         GDALOptions( const TileSourceOptions& options =TileSourceOptions() ) :
             TileSourceOptions( options ),
-            _interpolation(INTERP_AVERAGE)
+            _interpolation( INTERP_AVERAGE ),
+ 	    _nearIR(false)
         {
             setDriver( "gdal" );
             fromConfig( _conf );
@@ -136,6 +163,7 @@ namespace osgEarth { namespace Drivers
         {
             Config conf = TileSourceOptions::getConfig();
             conf.set( "url", _url );
+			conf.set("table", _table);
             conf.set( "connection", _connection );
             conf.set( "extensions", _extensions );
             conf.set( "black_extensions", _blackExtensions );
@@ -152,6 +180,8 @@ namespace osgEarth { namespace Drivers
             conf.set( "subdataset", _subDataSet);            
 
             conf.set( "warp_profile", _warpProfile );
+			conf.set("root_dir", _CDB_rootDir);
+			conf.set("limits", _CDB_Limits);
 
             conf.setNonSerializable( "GDALOptions::ExternalDataset", _externalDataset.get() );
 
@@ -165,6 +195,7 @@ namespace osgEarth { namespace Drivers
 
         void fromConfig( const Config& conf ) {
             conf.get( "url", _url );
+			conf.get("table", _table);
             conf.get( "connection", _connection );
             conf.get( "extensions", _extensions );
             conf.get( "black_extensions", _blackExtensions );
@@ -176,6 +207,9 @@ namespace osgEarth { namespace Drivers
             else if (in == "cubicspline") _interpolation = osgEarth::INTERP_CUBICSPLINE;
             conf.get( "max_data_level_override", _maxDataLevelOverride);
             conf.get( "subdataset", _subDataSet);
+			conf.get("nearir", _nearIR);
+			conf.get("root_dir", _CDB_rootDir);
+			conf.get("limits", _CDB_Limits);
 
             conf.get( "warp_profile", _warpProfile );
 
@@ -183,6 +217,9 @@ namespace osgEarth { namespace Drivers
         }
 
         optional<URI>                    _url;
+		optional<std::string>			 _table;
+		optional<std::string>			 _CDB_rootDir;
+		optional<std::string>			 _CDB_Limits;
         optional<std::string>            _connection;
         optional<std::string>            _extensions;
         optional<std::string>            _blackExtensions;
@@ -191,6 +228,7 @@ namespace osgEarth { namespace Drivers
         optional<unsigned int>           _subDataSet;
         optional<ProfileOptions>         _warpProfile;
         osg::ref_ptr<ExternalDataset>    _externalDataset;
+		optional<bool>					 _nearIR;
     };
 
 } } // namespace osgEarth::Drivers

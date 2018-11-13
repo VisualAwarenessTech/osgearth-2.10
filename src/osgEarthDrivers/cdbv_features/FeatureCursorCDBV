@@ -1,6 +1,9 @@
 /* -*-c++-*- */
+//The CDBV driver is a plugin for the osgEarth Library
+//Coppyright 2016-2017 Visual Awarness Technologies and Consulting Inc.
+//
 /* osgEarth - Dynamic map generation toolkit for OpenSceneGraph
- * Copyright 2016 Pelican Mapping
+ * Copyright 2015 Pelican Mapping
  * http://osgearth.org
  *
  * osgEarth is free software; you can redistribute it and/or modify
@@ -16,20 +19,24 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-#ifndef OSGEARTHFEATURES_FEATURE_CURSOR_OGR
-#define OSGEARTHFEATURES_FEATURE_CURSOR_OGR 1
+#ifndef OSGEARTHFEATURES_FEATURE_CURSOR_CDBV
+#define OSGEARTHFEATURES_FEATURE_CURSOR_CDBV 1
 
-#include <osgEarthFeatures/FeatureCursor>
+//#include <osgEarthFeatures/Feature>
 #include <osgEarthFeatures/FeatureSource>
+#include <osgEarthFeatures/FeatureCursor>
 #include <osgEarthFeatures/Filter>
 #include <osgEarthSymbology/Query>
 #include <ogr_api.h>
 #include <queue>
 
+#include <CDB_TileLib/CDB_Tile>
+
 using namespace osgEarth;
 using namespace osgEarth::Features;
 
-class FeatureCursorOGR : public FeatureCursor
+
+class FeatureCursorCDBV : public FeatureCursor
 {
 public:
     /**
@@ -46,14 +53,18 @@ public:
      * @param query
      *      The the query from which this cursor was created.
      */
-    FeatureCursorOGR(
-		OGRDataSourceH            dsHandle,
-        OGRLayerH                 layerHandle,
-        const FeatureSource*      source,
-        const FeatureProfile*     profile,
-        const Symbology::Query&   query,
+    FeatureCursorCDBV(
+		OGRDataSourceH           dsHandle,
+        OGRLayerH                layerHandle,
+        const FeatureSource*     source,
+        const FeatureProfile*    profile,
+        const Symbology::Query&  query,
         const FeatureFilterChain* filters,
-        ProgressCallback*         progress);
+		ProgressCallback*         progress,
+		bool					  use_spatial_rect,
+	    CDB_Tile_ExtentP		  rect_extent);
+
+	void Add_Layer_to_Cursor(OGRDataSourceH dsHandle, OGRLayerH layerHandle);
 
 public: // FeatureCursor
 
@@ -61,7 +72,8 @@ public: // FeatureCursor
     Feature* nextFeature();
 
 protected:
-    virtual ~FeatureCursorOGR();
+    virtual ~FeatureCursorCDBV();
+
 
 private:
     OGRDataSourceH                      _dsHandle;
@@ -75,11 +87,14 @@ private:
     osg::ref_ptr<const FeatureProfile>  _profile;
     std::queue< osg::ref_ptr<Feature> > _queue;
     osg::ref_ptr<Feature>               _lastFeatureReturned;
-    osg::ref_ptr<const FeatureFilterChain> _filters;
-    bool                                _resultSetEndReached;
+    const FeatureFilterChain*           _filters;
+    bool				_use_Spatial_Rect;
+    CDB_Tile_ExtentP			_Spatial_Rect;
 
 private:
     void readChunk();    
+	void Set_And_Read_Data(void);
+	void Read_Data_Directly(void);
 };
 
 

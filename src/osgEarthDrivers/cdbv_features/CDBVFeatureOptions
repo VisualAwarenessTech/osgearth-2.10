@@ -1,0 +1,139 @@
+/* -*-c++-*- */
+//The CDBV driver is a plugin for the osgEarth Library
+//Coppyright 2016-2017 Visual Awarness Technologies and Consulting Inc.
+//
+/* osgEarth - Dynamic map generation toolkit for OpenSceneGraph
+ * Copyright 2015 Pelican Mapping
+ * http://osgearth.org
+ *
+ * osgEarth is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
+#ifndef OSGEARTH_DRIVER_OGR_FEATURE_SOURCE_OPTIONS
+#define OSGEARTH_DRIVER_OGR_FEATURE_SOURCE_OPTIONS 1
+
+#include <osgEarth/Common>
+#include <osgEarthFeatures/FeatureSource>
+
+namespace osgEarth { namespace Drivers
+{
+    using namespace osgEarth;
+    using namespace osgEarth::Features;
+
+    class CDBVFeatureOptions : public FeatureSourceOptions // NO EXPORT; header only
+    {
+    public:
+		optional<std::string>& rootDir() { return _rootDir; }
+		const optional<std::string>& rootDir() const { return _rootDir; }
+
+		optional<std::string>& Limits() { return _Limits; }
+		const optional<std::string>& Limits() const { return _Limits; }
+
+		optional<int>& minLod() { return _minLod; }
+		const optional<int>& minLod() const { return _minLod; }
+
+		optional<int>& maxLod() { return _maxLod; }
+		const optional<int>& maxLod() const { return _maxLod; }
+
+		optional<bool>& Edit_Support() { return _Edit_Support; }
+		const optional<bool>& Edit_Support() const { return _Edit_Support; }
+
+        optional<std::string>& ogrDriver() { return _ogrDriver; }
+        const optional<std::string>& ogrDriver() const { return _ogrDriver; }
+
+        optional<Config>& geometryConfig() { return _geometryConf; }
+        const optional<Config>& geometryConfig() const { return _geometryConf; }
+
+        optional<std::string>& geometryUrl() { return _geometryUrl; }
+        const optional<std::string>& geometryUrl() const { return _geometryUrl; }
+
+        optional<std::string>& layer() { return _layer; }
+        const optional<std::string>& layer() const { return _layer; }
+
+		optional<bool>& Verbose() { return _Verbose; }
+		const optional<bool>& Verbose() const { return _Verbose; }
+	
+		optional<int>& tileSize() { return _tileSize; }
+		const optional<int>& tileSize() const { return _tileSize; }
+
+		// does not serialize
+        osg::ref_ptr<Symbology::Geometry>& geometry() { return _geometry; }
+        const osg::ref_ptr<Symbology::Geometry>& geometry() const { return _geometry; }
+
+    public:
+        CDBVFeatureOptions( const ConfigOptions& opt =ConfigOptions() ) : FeatureSourceOptions( opt ) {
+            setDriver( "ogr" );
+            fromConfig( _conf );
+        }
+
+        virtual ~CDBVFeatureOptions() { }
+
+    public:
+        Config getConfig() const {
+            Config conf = FeatureSourceOptions::getConfig();
+			conf.set("root_dir", _rootDir);
+			conf.set("limits", _Limits);
+			conf.set("minlod", _minLod);
+			conf.set("maxlod", _maxLod);
+			conf.set("edit_support", _Edit_Support);
+            conf.set( "ogr_driver", _ogrDriver );
+            conf.set( "geometry", _geometryConf );    
+            conf.set( "geometry_url", _geometryUrl );
+            conf.set( "layer", _layer );
+			conf.set("verbose", _Verbose);
+			conf.set("tile_size", _tileSize);
+			conf.setNonSerializable( "OGRFeatureOptions::geometry", _geometry.get() );
+            return conf;
+        }
+
+    protected:
+        void mergeConfig( const Config& conf ) {
+            FeatureSourceOptions::mergeConfig( conf );
+            fromConfig( conf );
+        }
+
+    private:
+        void fromConfig( const Config& conf ) {
+			conf.get("root_dir", _rootDir);
+			conf.get("limits", _Limits);
+			conf.get("minlod", _minLod);
+			conf.get("maxlod", _maxLod);
+			conf.get("edit_support", _Edit_Support);
+			conf.get( "ogr_driver", _ogrDriver );
+            conf.get( "geometry", _geometryConf );
+            conf.get( "geometry_url", _geometryUrl );
+            conf.get( "layer", _layer);
+			conf.get("verbose", _Verbose);
+			conf.get("tile_size", _tileSize);
+			_geometry = conf.getNonSerializable<Symbology::Geometry>( "OGRFeatureOptions::geometry" );
+        }
+
+        optional<std::string>             _ogrDriver;
+        optional<Config>                  _geometryConf;
+        optional<Config>                  _geometryProfileConf;
+        optional<std::string>             _geometryUrl;
+        optional<std::string>             _layer;
+        osg::ref_ptr<Symbology::Geometry> _geometry;	
+		optional<std::string> _rootDir;
+		optional<std::string> _Limits;
+		optional<int> _minLod;
+		optional<int> _maxLod;
+		optional<bool> _Edit_Support;
+		optional<bool> _Verbose;
+		optional<int>   _tileSize;
+	};
+
+} } // namespace osgEarth::Drivers
+
+#endif // OSGEARTH_DRIVER_OGR_FEATURE_SOURCE_OPTIONS
+

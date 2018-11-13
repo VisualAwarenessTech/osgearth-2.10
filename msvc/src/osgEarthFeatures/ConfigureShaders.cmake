@@ -1,10 +1,10 @@
 # configureshaders.cmake.in
 
-set(source_dir      "K:/Development/op3d_active/osgearth-2.10/src/osgEarthFeatures")
-set(bin_dir         "K:/Development/op3d_active/osgearth-2.10/msvc/src/osgEarthFeatures")
+set(source_dir      "../../../src/osgEarthFeatures")
+set(bin_dir         "./")
 set(glsl_files      "")
 set(template_file   "Shaders.cpp.in")
-set(output_cpp_file "K:/Development/op3d_active/osgearth-2.10/msvc/src/osgEarthFeatures/AutoGenShaders.cpp")
+set(output_cpp_file "./AutoGenShaders.cpp")
 
 # modify the contents for inlining; replace input with output (var: file)
 # i.e., the file name (in the form ) gets replaced with the

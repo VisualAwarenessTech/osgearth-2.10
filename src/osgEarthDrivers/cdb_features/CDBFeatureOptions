@@ -1,0 +1,152 @@
+/* -*-c++-*- */
+/* osgEarth - Dynamic map generation toolkit for OpenSceneGraph
+ * Copyright 2008-2013 Pelican Mapping
+ * http://osgearth.org
+ *
+ * osgEarth is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
+// 2014-2015 GAJ Geospatial Enterprises, Orlando FL
+// Created FeatureSourceCDB for Incorporation of Common Database (CDB) support within osgEarth
+// 2016-2017 Visual Awareness Technologies and Consulting Inc. St Petersburg FL
+
+#ifndef OSGEARTH_DRIVER_CDB_FEATURE_SOURCE_OPTIONS
+#define OSGEARTH_DRIVER_CDB_FEATURE_SOURCE_OPTIONS 1
+
+#include <osgEarth/Common>
+#include <osgEarth/URI>
+#include <osgEarthFeatures/FeatureSource>
+
+namespace osgEarth { namespace Drivers
+{
+    using namespace osgEarth;
+    using namespace osgEarth::Features;
+
+    /**
+     * Options for the CDB feature driver.
+     */
+    class CDBFeatureOptions : public FeatureSourceOptions // NO EXPORT; header only
+    {
+    public:
+		optional<std::string>& rootDir() { return _rootDir; }
+		const optional<std::string>& rootDir() const { return _rootDir; }
+		optional<std::string>& fileName() { return _FileName; }
+		const optional<std::string>& fileName() const { return _FileName; }
+		optional<std::string>& Limits() { return _Limits; }
+		const optional<std::string>& Limits() const { return _Limits; }
+		optional<int>& minLod() { return _minLod; }
+		const optional<int>& minLod() const { return _minLod; }
+		optional<int>& maxLod() { return _maxLod; }
+		const optional<int>& maxLod() const { return _maxLod; }
+		optional<bool>& inflated() { return _inflated; }
+		const optional<bool>& inflated() const { return _inflated; }
+		optional<bool>& geoTypical() { return _geoTypical; }
+		const optional<bool>& geoTypical() const { return _geoTypical; }
+		optional<bool>& GS_uses_GTtex() { return _GS_uses_GTtex; }
+		const optional<bool>& GS_uses_GTtex() const { return _GS_uses_GTtex; }
+		optional<bool>& Edit_Support() { return _Edit_Support; }
+		const optional<bool>& Edit_Support() const { return _Edit_Support; }
+		optional<bool>& No_Second_Ref() { return _No_Second_Ref; }
+		const optional<bool>& No_Second_Ref() const { return _No_Second_Ref; }
+		optional<bool>& GT_LOD0_FullStack() { return _GT_LOD0_FullStack; }
+		const optional<bool>& GT_LOD0_FullStack() const { return _GT_LOD0_FullStack; }
+		optional<bool>& GS_LOD0_FullStack() { return _GS_LOD0_FullStack; }
+		const optional<bool>& GS_LOD0_FullStack() const { return _GS_LOD0_FullStack; }
+		optional<bool>& Verbose() { return _Verbose; }
+		const optional<bool>& Verbose() const { return _Verbose; }
+		optional<bool>& ABS_Z_in_M() { return _ABS_Z_in_M; }
+		const optional<bool>& ABS_Z_in_M() const { return _ABS_Z_in_M; }
+		optional<bool>& Materials() { return _Enable_Subord_Material; }
+		const optional<bool>& Materials() const { return _Enable_Subord_Material; }
+		optional<int>& tileSize() { return _tileSize; }
+		const optional<int>& tileSize() const { return _tileSize; }
+	public:
+        CDBFeatureOptions( const ConfigOptions& opt =ConfigOptions() ) :
+          FeatureSourceOptions( opt )
+          {
+            setDriver( "cdb" );            
+            fromConfig( _conf );
+          }
+
+          virtual ~CDBFeatureOptions() { }
+
+    public:
+        Config getConfig() const {
+            Config conf = FeatureSourceOptions::getConfig();
+			conf.set("root_dir", _rootDir);
+			conf.set("filename", _FileName);
+			conf.set("limits", _Limits);
+			conf.set("minlod", _minLod);
+			conf.set("maxlod", _maxLod);
+			conf.set("inflated", _inflated);
+			conf.set("geotypical", _geoTypical);
+			conf.set("gs_uses_gttex", _GS_uses_GTtex);
+			conf.set("edit_support", _Edit_Support);
+			conf.set("no_second_ref", _No_Second_Ref);
+			conf.set("gt_lod0_full_stack", _GT_LOD0_FullStack);
+			conf.set("gs_lod0_full_stack", _GS_LOD0_FullStack);
+			conf.set("verbose", _Verbose);
+			conf.set("abszinm", _ABS_Z_in_M);
+			conf.set("materials", _Enable_Subord_Material);
+			conf.set("tile_size", _tileSize);
+			return conf;
+        }
+
+    protected:
+        void mergeConfig( const Config& conf ) {
+            FeatureSourceOptions::mergeConfig( conf );
+            fromConfig( conf );
+        }
+
+    private:
+        void fromConfig( const Config& conf ) {
+			conf.get("root_dir", _rootDir);
+			conf.get("filename", _FileName);
+			conf.get("limits", _Limits);
+			conf.get("minlod", _minLod);
+			conf.get("maxlod", _maxLod);
+			conf.get("inflated", _inflated);
+			conf.get("geotypical", _geoTypical);
+			conf.get("gs_uses_gttex", _GS_uses_GTtex);
+			conf.get("edit_support", _Edit_Support);
+			conf.get("no_second_ref", _No_Second_Ref);
+			conf.get("gt_lod0_full_stack", _GT_LOD0_FullStack);
+			conf.get("gs_lod0_full_stack", _GS_LOD0_FullStack);
+			conf.get("verbose", _Verbose);
+			conf.get("materials", _Enable_Subord_Material);
+			conf.get("abszinm", _ABS_Z_in_M);
+			conf.get("tile_size", _tileSize);
+		}
+
+		optional<std::string> _rootDir;
+		optional<std::string> _Limits;
+		optional<std::string> _FileName;
+		optional<int> _minLod;
+		optional<int> _maxLod;
+		optional<bool>_inflated;
+		optional<bool>_geoTypical;
+		optional<bool>_GS_uses_GTtex;
+		optional<bool>_Edit_Support;
+		optional<bool>_No_Second_Ref;
+		optional<bool>_GT_LOD0_FullStack;
+		optional<bool>_GS_LOD0_FullStack;
+		optional<bool> _Verbose;
+		optional<bool> _ABS_Z_in_M;
+		optional<bool> _Enable_Subord_Material;
+		optional<int>   _tileSize;
+	};
+
+} } // namespace osgEarth::Drivers
+
+#endif // OSGEARTH_DRIVER_CDB_FEATURE_SOURCE_OPTIONS
+
