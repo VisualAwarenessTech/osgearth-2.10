@@ -10,11 +10,11 @@ if(COMMAND cmake_policy)
     cmake_policy(SET CMP0005 OLD)
 
     # Qt5 qt5_use_modules usage was causing "Policy CMP0043 is not set: Ignore COMPILE_DEFINITIONS_<Config> properties." warnings
-    #cmake_policy(SET CMP0043 NEW)
+    cmake_policy(SET CMP0043 NEW)
 
     # Double colon in target name means IMPORTED (and not ALIAS or IMPORTED).
     # Fixes a warning when cache_rocksdb links to target "RocksDB::rocksdb"
-    #cmake_policy(SET CMP0028 NEW)
+    cmake_policy(SET CMP0028 NEW)
 endif(COMMAND cmake_policy)
 
 #
