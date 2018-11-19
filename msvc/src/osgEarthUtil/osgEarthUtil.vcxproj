@@ -983,6 +983,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="..\..\..\src\osgEarthUtil\MGRSGraticule.cpp" />
     <ClCompile Include="..\..\..\src\osgEarthUtil\MouseCoordsTool.cpp" />
     <ClCompile Include="..\..\..\src\osgEarthUtil\MultiElevationLayer.cpp" />
+    <ClCompile Include="..\..\..\src\osgEarthUtil\ObjectLocator.cpp" />
     <ClCompile Include="..\..\..\src\osgEarthUtil\Ocean.cpp" />
     <ClCompile Include="..\..\..\src\osgEarthUtil\RadialLineOfSight.cpp" />
     <ClCompile Include="..\..\..\src\osgEarthUtil\RTTPicker.cpp" />
@@ -1050,6 +1051,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <None Include="..\..\..\src\osgEarthUtil\MGRSGraticule" />
     <None Include="..\..\..\src\osgEarthUtil\MouseCoordsTool" />
     <None Include="..\..\..\src\osgEarthUtil\MultiElevationLayer" />
+    <None Include="..\..\..\src\osgEarthUtil\ObjectLocator" />
     <None Include="..\..\..\src\osgEarthUtil\Ocean" />
     <None Include="..\..\..\src\osgEarthUtil\RadialLineOfSight" />
     <None Include="..\..\..\src\osgEarthUtil\RTTPicker" />

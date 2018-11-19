@@ -187,6 +187,9 @@
     <ClCompile Include="..\..\..\src\osgEarthUtil\NightColorFilter.cpp">
       <Filter>Sources\ColorFilters</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\osgEarthUtil\ObjectLocator.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\osgEarthUtil\Shaders.cpp.in">
@@ -444,6 +447,9 @@
     </None>
     <None Include="..\..\..\src\osgEarthUtil\RTTPicker.glsl">
       <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\..\src\osgEarthUtil\ObjectLocator">
+      <Filter>Headers</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
