@@ -231,6 +231,7 @@ ModelLayer::getCacheID() const
     return binID;
 }
 
+
 void
 ModelLayer::addedToMap(const Map* map)
 {
