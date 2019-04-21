@@ -47,7 +47,8 @@ _imageBiasT       ( 0.0f ),
 _imageLayer       ( 0 ),
 _imageScaleS      ( 1.0f ),
 _imageScaleT      ( 1.0f ),
-_atlasHint        ( true )
+_atlasHint        ( true ),
+_SurfaceMaterialCode(-1)
 {
     mergeConfig( conf );
 }
@@ -77,6 +78,7 @@ SkinResource::mergeConfig( const Config& conf )
 
     conf.get( "atlas", _atlasHint );
     conf.get( "read_options", _readOptions );
+	conf.get("surfacematcode", _SurfaceMaterialCode);
 }
 
 Config
@@ -108,6 +110,7 @@ SkinResource::getConfig() const
     
     conf.set( "atlas", _atlasHint );
     conf.set( "read_options", _readOptions );
+	conf.set("surfacematcode", _SurfaceMaterialCode);
 
     return conf;
 }

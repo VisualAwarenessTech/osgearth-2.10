@@ -41,6 +41,7 @@
 #include <osg/ShapeDrawable>
 #include <osg/AlphaFunc>
 #include <osg/Billboard>
+#include <osg/CullFace>
 
 #include <osgSim/LightPointNode>
 
@@ -108,6 +109,16 @@ public:
 		{
 #ifdef _DEBUG
 			int numTexModes = ss->getNumTextureModeLists();
+			if(numTexModes > 0)
+				ss->setTextureMode(0, GL_TEXTURE_2D, osg::StateAttribute::ON | osg::StateAttribute::OVERRIDE);
+#endif
+
+#if 0
+			osg::CullFace * sa = static_cast<osg::CullFace *>(ss->getAttribute(osg::StateAttribute::CULLFACE));
+			if (sa)
+			{
+				ss->removeAttribute(sa);
+			}
 #endif
 			for (unsigned int i = 1; i<ss->getNumTextureModeLists(); i++)
 			{
